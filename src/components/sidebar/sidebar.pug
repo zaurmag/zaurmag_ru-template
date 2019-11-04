@@ -1,0 +1,69 @@
+aside.sidebar.sidebar__right.col-lg-4
+    // Поиск
+    .widget.w_search
+        .form
+            form.w_search__form
+                .form__element
+                    input.form__input.w_search__input(type="text", placeholder="Поиск по сайту...")
+
+                    button.w_search__btn.btn(type="submit")
+                        +icon('search')
+
+    // Мои видеокурсы
+    .widget
+        .widget__title
+            span Мои видеокурсы
+
+        .slider-courses.owl-carousel.owl-theme
+            include ../slider-courses/slider-courses
+
+
+    // Подписка на новости
+    .widget
+        .widget__title
+            span Подписка на новости блога
+        p Подпишитесь на рассылку, чтобы не пропустить новые материалы на блоге.
+        .form
+            form.form__form
+                fieldset.form__fields
+                    .form__element.form__element--icon
+                        label.form__label Ваше имя *
+                        input.form__input(type="text" name="name" required="required")
+
+                        +icon('user')
+
+                    .form__element.form__element--icon
+                        label.form__label Ваше email *
+                        input.form__input(type="email" name="email" required="required")
+
+                        +icon('email')
+
+                button.mt-3.btn.btn-block.btn-danger.btn-tt_up(type="submit") Подписаться
+
+    // Популярное
+    .widget
+        .widget__title
+            span Популярное
+
+        .sm_posts
+            -
+                var postsData = [
+                    {
+                        "title" : "Цветовой профиль в фотошопе и его настройка",
+                        "image" : "1642-featured-208x0",
+                        "date" : "Ноя 03, 2013",
+                        "views" : "114 183",
+                        "comments": "74"
+                    },
+                    {
+                        "title" : "Мультиязычность в Joomla 3. Как сделать мультиязычный сайт на Joomla?",
+                        "image" : "2219-featured-208x0",
+                        "date" : "Авг 16, 2014",
+                        "views" : "147278",
+                        "comments": "480"
+                    }
+                ];
+            each item in postsData
+                .sm_post
+                    +sm_post(item.title, item.image, item.date, item.views, '', item.comments)
+

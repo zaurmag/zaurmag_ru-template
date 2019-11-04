@@ -1,0 +1,24 @@
+.loadmore
+    text-align: center
+    position: relative
+
+    &::before
+        background-color: $gray-500
+        content: ""
+        display: block
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 0
+        right: 0
+        height: 1px
+        z-index: 0
+
+    .btn
+        border-width: 2px
+        color: #5d5d5d
+        position: relative
+        z-index: 2
+
+        &:not(:hover)
+            background-color: $white

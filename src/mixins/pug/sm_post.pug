@@ -1,0 +1,11 @@
+mixin sm_post(title, image, date, views, category, comments)
+    .sm_post__left
+        img(src="../images/sm_posts/"+ image +".jpg", alt= title, width="")
+        .sm_post__comments= comments
+
+    .sm_post__right
+        .sm_post__title
+            a(href="#")= title
+
+        .info-block.info-block--sm
+            +infoBlock(false, date, views, category, '')

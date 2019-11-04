@@ -1,0 +1,26 @@
+.social
+    align-items: center
+    display: flex
+
+    &__link
+        align-items: center
+        background-color: rgba($white, 0.3)
+        border-radius: 50%
+        color: #e6e6e6
+        display: flex
+        justify-content: center
+        transition: background-color .2s ease
+        height: 24px
+        width: 24px
+
+        &:not(:last-child)
+            margin-right: 5px
+
+        .icon
+            font-size: 12px
+
+        &:hover
+            background-color: rgba($black, 0.3)
+            color: #e6e6e6
+            transition: background-color .2s ease
+

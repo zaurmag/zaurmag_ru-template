@@ -1,0 +1,60 @@
+.form
+    $self: &
+
+    &__element
+        border: 2px solid $gray-500
+        transition: border-color .2s ease
+        position: relative
+        overflow: hidden
+        height: 46px
+
+        &:not(:last-child)
+            margin-bottom: 15px
+
+        // Focus
+        &--focused
+            border-color: $gray-600
+            transition: border-color .2s ease
+
+            #{$self}__label
+                font-size: 11px
+                top: 8px
+                bottom: auto
+                transition: all 0.2s ease
+
+        // Icon
+        &--icon
+            padding-right: 30px
+
+        .icon
+            fill: #c9c9c9
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            right: 15px
+
+    // Label
+    &__label
+        color: #9c9c9c
+        position: absolute
+        left: 15px
+        top: 50%
+        pointer-events: none
+        font-size: 14px
+        transform: translateY(-50%)
+        transition: all 0.2s ease
+
+    // Input
+    &__input
+        border: none
+        padding: 5px 15px
+        font-size: 14px
+        height: 42px
+        width: 100%
+
+        &::placeholder
+            color: #9c9c9c
+            opacity: 1
+
+        &:focus
+            outline: none

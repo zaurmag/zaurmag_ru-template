@@ -1,0 +1,31 @@
+.info-block
+    align-items: center
+    color: #a4a4a4
+    display: flex
+    font-size: 13px
+
+    &__item
+        align-items: center
+        display: flex
+
+        &:not(:last-child)
+            margin-right: 20px
+
+        .icon
+            margin-right: 5px
+
+    &__author
+        align-items: center
+        display: flex
+        color: #56355f
+
+        &-img
+            display: block
+            border-radius: 50%
+            width: 30px
+
+        span
+            display: block
+
+    &.info-block--sm
+        font-size: 11px

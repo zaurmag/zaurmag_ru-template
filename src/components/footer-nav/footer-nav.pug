@@ -1,0 +1,10 @@
+nav.footer-nav
+    ul.footer-nav__list
+        - var i = 0;
+
+        each name in ['Размещение рекламы', 'Карта сайта']
+            - var active = i === 0 ? ' footer-nav--active' : '';
+
+            li(class="footer-nav__item" + active)
+                a.footer-nav__link(href="#")= name
+                - i++;

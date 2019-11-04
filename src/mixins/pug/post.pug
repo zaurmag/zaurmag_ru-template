@@ -1,0 +1,28 @@
+mixin post(title, image, postFormat, date, views, category, comments)
+    - var postType = postFormat == 'video' ? ' post--video' : '';
+
+    article(class='post mb-6' + postType, itemscope="", itemtype="http://schema.org/Article")
+        header.post__header
+            h2.post__title
+                a.post__title-link(href="./post.html", itemprop="url")
+                    span(itemprop="name")= title
+
+            .post__format
+                +icon(postFormat)
+
+            .info-block
+                +infoBlock(true, date, views, category, comments)
+
+        .post__image
+            a.post__image-link(href="/post.html")
+                - if(postFormat == 'video')
+                    +icon('youtube-video')
+
+                picture
+                    source(media="(min-width: 1200px)" srcset="../images/posts/" + image + ".jpg")
+                    img(src="data:image/gif;base64,R0lGODlhAQABAAAAADs=", alt= title, width="750")
+
+        .post__descr Доброго времени суток уважаемые посетители! Небольшое вступление про то, что давно не писал на блоге. Причина — строительство своего дома. Стройка отняла у меня очень много времени, начиная с теории, заканчивая практикой. Ведь кроме фундамента, стен и кровли все остальное делал сам своими руками.
+
+        .post__readmore
+            a.btn.btn-danger.btn-sm.px-3(href="/post.html") Читать далее

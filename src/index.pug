@@ -1,0 +1,22 @@
+extends ./base/page
+
+block variables
+    - var title = 'Заур Магомедов'
+    - var pageClass = 'homepage'
+
+block columns
+    main.content.content__right.col-lg-8
+        .posts
+            +post('Отложенная загрузка видео Ютуб на сайте', 'lazy-load-youtube-video', 'document', 'Окт 26, 2019', '26', 'JavaScript', 0)
+
+            +post('Обзор видеокамеры Panasonic V770 + штатив и петлица', 'videokamera-panasonic-v770', 'document', 'Янв 27, 2019', '688', 'Устройства и гаджеты', 0)
+
+            +post('Отзыв о книге «Атлант расправил плечи» + 3 небольшие книги для прочтения', 'review-atlant-rp', 'video', 'Янв 25, 2019', '2680', 'Книги', 2)
+
+            +post('Современные методы продвижения сайта', 'prodvizhenie-sajta-v-sovremennyh-realiyah', 'document', 'Янв 17, 2019', '1415', 'Seo', 2)
+
+        .loadmore.mt-6
+            a.btn.btn-outline-secondary.posts__loadmore-btn.px-4(href="#") Загрузить еще
+
+    include components/sidebar/sidebar
+

@@ -1,0 +1,35 @@
+mixin infoBlock(author, date, views, category, comments)
+    if(author)
+        span.info-block__item(itemprop="author" itemscope="" itemtype="http://schema.org/Person")
+            span.info-block__author(itemprop="name")
+                img.info-block__author-img.img-fluid.mr-2(src="../images/info-block/zaur-mag.jpg", alt="Заур Магомедов", width="")
+                span Заур Магомедов
+
+    if(date)
+        span.info-block__item(itemprop="datePublished")
+            +icon('calendar')
+            = date
+
+    if(views)
+        span.info-block__item
+            +icon('eye')
+            = views
+
+    if(category)
+        span.info-block__item
+            +icon('folder')
+            | в
+            a.text-success.ml-1(href="#")= category
+
+    if(comments)
+        span.info-block__item
+            +icon('comments')
+
+            if(comments == 0)
+                a.mr-1.text-danger(href="#")
+                    | Комментариев нет
+            else
+                a.mr-1.text-danger(href="#")
+                    = comments
+                | Комментариев
+

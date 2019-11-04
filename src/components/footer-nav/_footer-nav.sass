@@ -1,0 +1,33 @@
+.footer-nav
+    $self: &
+
+    display: flex
+    justify-content: flex-end
+
+    &__list
+        align-items: center
+        display: flex
+        font-size: 12px
+
+    &__item
+        &:not(:last-child)
+            margin-right: 15px
+
+            #{$self}__link
+                &::after
+                    content: "/"
+                    margin-left: 15px
+
+    &--active
+        #{$self}__link
+            color: #bababa
+
+    &__link
+        align-items: center
+        color: #808080
+        display: flex
+
+        &:hover
+            color: #bababa
+            text-decoration: none
+

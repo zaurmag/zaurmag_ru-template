@@ -1,0 +1,106 @@
+.post
+    $self: &
+
+    &:not(:last-child)
+        border-bottom: 2px solid $gray-500
+        padding-bottom: 23px
+
+    &__header
+        border-bottom: 1px solid $gray-500
+        padding-bottom: 15px
+        margin-bottom: 22px
+        position: relative
+        padding-right: 60px
+
+    &__title
+        font-size: 25px
+        font-weight: 500
+        margin-bottom: 15px
+        line-height: 1.2
+
+        &-link
+            color: $gray-800
+
+            &:hover
+                color: $red
+
+    &__format
+        align-items: center
+        border: 2px solid $gray-500
+        color: $gray-500
+        display: flex
+        position: absolute
+        top: 0
+        right: 0
+        justify-content: center
+        height: 48px
+        width: 48px
+
+        &::before,
+        &::after
+            content: ""
+            display: block
+            position: absolute
+            left: 50%
+            transform: translateX(-50%)
+            height: 0
+            width: 0
+
+        &::before
+            border-left: 7px solid transparent
+            border-right: 7px solid transparent
+            border-top: 8px solid $gray-500
+            bottom: -10px
+
+        &::after
+            border-left: 6px solid transparent
+            border-right: 6px solid transparent
+            border-top: 6px solid #fff
+            bottom: -6px
+
+        .icon
+            font-size: 21px
+
+    &__image
+        display: block
+        margin-bottom: 20px
+
+    &__descr
+        color: $gray-800
+        font-size: 16px
+        line-height: 1.6
+        margin-bottom: 20px
+
+    /**
+     * Post format
+     */
+    &--video
+        #{$self}__image-link
+            position: relative
+            display: block
+
+            &::after
+                content: ""
+                position: absolute
+
+            &::after
+                background-color: rgba($black, 0.35)
+                top: 0
+                right: 0
+                bottom: 0
+                left: 0
+                z-index: 0
+
+            .icon-youtube-video
+                fill: $red
+                font-size: 70px
+                position: absolute
+                @include pos-center
+                opacity: .7
+                transition: opacity .2s ease
+                z-index: 2
+
+            &:hover
+                .icon-youtube-video
+                    transition: opacity .2s ease
+                    opacity: 1

@@ -1,0 +1,58 @@
+include ../mixins/pug/svg-icon
+include ../mixins/pug/post
+include ../mixins/pug/info-block
+include ../mixins/pug/sm_post
+block variables
+
+doctype html
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+        meta(name="theme-color" content="#168dd3")
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        meta(name='viewport', content='initial-scale=1.0, width=device-width')
+        title #{title}
+
+        link(rel='stylesheet', href='./css/styles.min.css')
+
+        <!--[if lt IE 9]>
+        script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+        <![endif]-->
+
+    body(class=pageClass)
+        .main-wrap
+
+            .main-wrap__content
+                //- Include header
+                include ../components/header/header
+                //- Main menu
+                include ../components/main-menu/main-menu
+
+                block top-position
+
+                .container.main-container
+                    if(pageClass != 'homepage')
+                        //- Breadcrumbs
+                        nav.breadcrumbs
+                            ul.breadcrumbs__list
+                                li
+                                    a(href="#") Главная
+                                    span.divider /
+                                li.breadcrumbs--active #{title}
+
+                    .row
+                        block columns
+
+                block bottom-position
+
+            //- Include footer
+            include ../components/footer/footer
+
+        .d-none
+            include ../../dist/images/sprite.svg
+
+        a.go_top_link(href='#', style='display:none;')
+            +icon('arrow-up')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+        script(src='./js/scripts.js')
+        block script

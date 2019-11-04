@@ -1,0 +1,13 @@
+.container
+    .row
+        .col-md-7
+            include ../top-menu/top-menu
+
+        .col-md-5.d-flex.align-items-center.justify-content-end
+            .contact-block
+                .contact-block__email
+                    +icon('email')
+                    a.contact-block__email-link(href="mailto:order@zaurmag.ru") order@zaurmag.ru
+
+                .social.ml-6
+                    include ../social/social

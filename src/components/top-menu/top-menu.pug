@@ -1,0 +1,12 @@
+nav.top-menu
+    ul.top-menu__list
+        - var i = 0;
+        each name in ['Главная', 'Обо мне', 'Мои услуги', 'Портфолио', 'Мои видеокурсы', 'Контакы' ]
+            if(i == 0)
+                li.top-menu__item.top-menu--active
+                    a.top-menu__link(href="#")= name
+                - i++
+            else
+                li.top-menu__item
+                    a.top-menu__link(href="#")= name
+                - i++

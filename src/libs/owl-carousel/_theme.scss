@@ -1,0 +1,93 @@
+.owl-theme {
+	position: relative;
+	// Styling Next and Prev buttons
+	.owl-nav {
+		text-align: center;
+		-webkit-tap-highlight-color: transparent;
+		opacity: 0;
+		transition: opacity 0.1s ease;
+
+		button[class*='owl-'] {
+			align-items: center;
+			color: $nav-color;
+			font-size: $nav-font-size;
+			margin: $nav-margin;
+			padding: $nav-padding;
+			background: $nav-background;
+			display: flex;
+			cursor: pointer;
+			position: absolute;
+			top: 40%;
+			transform: translateY(-50%);
+			transition: background .2s ease;
+			justify-content: center;
+			outline: none;
+			height: 60px;
+			width: 30px;
+
+			&:not(.disabled) {
+				&:hover {
+					background: $nav-background-hover;
+					color: $nav-color-hover;
+					text-decoration: none;
+					transition: background .2s ease;
+				}
+			}
+			.icon {
+				font-size: 20px;
+			}
+		}
+		.owl-next {
+			right: 0;
+		}
+		.owl-prev {
+			left: 0;
+		}
+		.disabled {
+			opacity: $nav-disabled-opacity !important;
+			cursor: default !important;
+		}
+	}
+
+	// Styling dots
+	.owl-nav.disabled + .owl-dots {
+		margin-top: 10px;
+	}
+
+	.owl-dots {
+		text-align: center;
+		-webkit-tap-highlight-color: transparent;
+		margin-top: 15px;
+
+		.owl-dot {
+			display: inline-block;
+			outline: none;
+			zoom: 1;
+			*display: inline;
+
+			span {
+				width: $dot-width;
+				height: $dot-height;
+				margin: $dot-margin;
+				background: $dot-background;
+				display: block;
+				-webkit-backface-visibility: visible;
+				transition: opacity 200ms ease;
+				border-radius: $dot-rounded;
+			}
+
+			&.active,
+			&:hover {
+				span {
+					background: $dot-background-active;
+				}
+			}
+		}
+	}
+	&:hover {
+		.owl-nav {
+			transition: opacity 0.1s ease;
+			opacity: 1;
+		}
+	}
+}

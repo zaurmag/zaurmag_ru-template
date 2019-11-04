@@ -1,0 +1,260 @@
+.main-menu
+    $self: &
+    background-color: $red
+
+    > .container
+        position: relative
+        height: 80px
+
+        @include media-breakpoint-down(md)
+            display: flex
+            justify-content: space-between
+            align-items: center
+
+
+    /**
+     * Mobile
+     */
+    @include media-breakpoint-down(md)
+        // Root Container
+        > .container
+            &.show
+                background-color: #dee4e9
+
+        // Select lang
+        &__select-lang
+            margin-bottom: 10px
+
+            .switch-lang
+                height: 50px
+                width: 100%
+
+        // Title
+        &__title
+            color: $blue
+            text-transform: uppercase
+            font-size: 16px
+            font-weight: 500
+            line-height: 1.25
+            margin-bottom: 10px
+            order: 2
+
+        // Contact block
+        &__contact-block
+            padding-left: 10px
+            padding-right: 10px
+
+            .contact-block__row
+                .icon
+                    font-size: 16px
+
+                @media (max-width: 360px)
+                    font-size: 12px
+
+
+        // Menu wrapper
+        &__wrap
+            background-color: #dee4e9
+            opacity: 0
+            visibility: hidden
+            margin-top: 20px
+            position: absolute
+            top: 56px
+            left: 0
+            right: 0
+            padding: 15px
+            transition: all .2s ease
+            z-index: 10
+
+            .show &
+                visibility: visible
+                opacity: 1
+                margin-top: 0
+                transition: all .2s ease
+
+            @include media-breakpoint-down(md)
+                flex-direction: column
+
+        &__nav
+            font-size: 14px
+            font-weight: 500
+            line-height: 1.43
+            text-transform: uppercase
+            margin: 0
+            order: 3
+
+            > li
+                > a
+                    border-top: 2px solid $white
+                    display: block
+                    padding: 10px
+
+                    &:hover
+                        text-decoration: none
+
+                // Parent
+                &.parent, &.menu-item-has-children
+                    > a
+                        align-items: center
+                        display: flex
+                        position: relative
+                        justify-content: space-between
+
+                        &::after
+                            border-top: 5px solid $blue
+                            border-left: 4px solid transparent
+                            border-right: 4px solid transparent
+                            content: ""
+                            height: 0
+                            width: 0
+
+                        &:hover
+                            &::after
+                                border-top-color: $red
+
+
+            // Child items
+            &-child, .sub-menu
+                text-transform: none
+                margin-left: 20px
+                padding-top: 5px
+                padding-bottom: 15px
+                font-weight: 400
+
+                li
+                    &:not(:last-child)
+                        margin-bottom: 10px
+
+                    a
+                        &:hover
+                            text-decoration: none
+
+    /**
+     * Desktop
+     */
+    @include media-breakpoint-up(lg)
+        &__nav
+            align-items: center
+            display: flex
+            font-size: 18px
+            font-weight: 400
+            //text-transform: uppercase
+            margin: 0
+            padding: 0
+            height: 80px
+
+            .current-menu-item, .current-menu-parent
+                > a
+                    color: $white
+
+            a
+                align-items: center
+                display: inline-flex
+
+                .icon
+                    margin-right: 5px
+                    font-size: 16px
+
+            // First level
+            > li
+                align-items: center
+                display: flex
+                position: relative
+                height: 100%
+
+                > a
+                    align-items: center
+                    color: $white
+                    display: flex
+                    position: relative
+
+                    &:hover
+                        text-decoration: none
+
+                    &::after
+                        background-color: $white
+                        content: ""
+                        width: 0
+                        position: absolute
+                        bottom: -5px
+                        left: 0
+                        height: 2px
+                        transition: all .2s ease
+                        z-index: 11
+
+                &:hover, &.current-menu-item, &.current-menu-parent
+                    > a
+                        &::after
+                            transition: all .2s ease
+                            width: 100%
+
+                // Parent
+                &.parent, &.menu-item-has-children
+                    &:last-child
+                        #{$self}__nav-child, .sub-menu
+                            left: auto
+                            right: 0
+
+                    a
+                        &::before
+                            border-top: 5px solid $white
+                            border-left: 4px solid transparent
+                            border-right: 4px solid transparent
+                            display: block
+                            content: ""
+                            position: absolute
+                            top: 50%
+                            transform: translateY(-50%)
+                            right: -13px
+
+                    &:hover
+                        > a
+                            color: $white
+
+                        .main-menu__nav-child, .sub-menu
+                            opacity: 1
+                            visibility: visible
+                            margin-top: 8px
+                            transition: all .2s ease
+
+
+                &:not(:last-child)
+                    margin-right: 40px
+
+            // Second level
+            &-child, .sub-menu
+                background-color: #f1f1f1
+                border: 1px solid rgba($black, 0.4)
+                border-top: 4px solid $red
+                text-transform: none
+                font-size: 14px
+                font-weight: 400
+                position: absolute
+                top: 80px
+                left: 0
+                min-width: 200px
+                padding-top: 10px
+                padding-bottom: 10px
+                opacity: 0
+                visibility: hidden
+                margin-top: 20px
+                transition: all .2s ease
+                z-index: 10
+
+                li
+                    &:not(:last-child)
+                        border-bottom: 1px solid #e2e2e2
+                        margin-bottom: 0
+
+                    a
+                        color: #5d5d5d
+                        display: block
+                        padding: 10px 20px
+                        transition: background-color .2s ease
+
+                        &:hover
+                            background-color: #e8e8e8
+                            text-decoration: none
+                            transition: background-color .2s ease
+
+

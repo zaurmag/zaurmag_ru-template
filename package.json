@@ -1,0 +1,44 @@
+{
+  "name": "zaurmag-gulp-project",
+  "version": "1.0.0",
+  "description": "My gulp project v.4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Zaur Magomedov",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "latest",
+    "browser-sync": "latest",
+    "critical": "latest",
+    "del": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-changed": "latest",
+    "gulp-cheerio": "latest",
+    "gulp-concat": "latest",
+    "gulp-csso": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-plumber": "latest",
+    "gulp-pug": "latest",
+    "gulp-pug2": "latest",
+    "gulp-pxtorem": "latest",
+    "gulp-rename": "latest",
+    "gulp-replace": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-svg-sprite": "latest",
+    "gulp-tinypng": "latest",
+    "gulp-uglify": "latest",
+    "gulp-watch": "latest",
+    "gulp.spritesmith": "latest",
+    "gulp-zip": "latest"
+  },
+  "dependencies": {
+    "gulp-favicons": "latest",
+    "magnific-popup": "latest",
+    "owl.carousel": "latest"
+  }
+}

@@ -1,0 +1,40 @@
+// Font
+$font-family-base: "Roboto", sans-serif;
+
+/* Bootstrap
+   ========================================================================= */
+
+// Colors
+$gray-500: #b6b6b6;
+$gray-800: #505050;
+
+$red: #c24215;
+$orange: #ecb716;
+$teal: #1eb089;
+
+// Grid containers
+$container-max-widths: (xl: 1170px) !default;
+
+// Spacing
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+    (
+        6: ($spacer * 1.875)
+    ),
+    $spacers
+);
+
+// Buttons
+$btn-border-radius:           0 !default;
+$btn-border-radius-lg:        0 !default;
+$btn-border-radius-sm:        1.7px !default;
+
+// Themes
+$secondary:     $gray-500 !default;
+
+// Images
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
