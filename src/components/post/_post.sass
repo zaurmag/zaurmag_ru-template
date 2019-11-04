@@ -104,3 +104,63 @@
                 .icon-youtube-video
                     transition: opacity .2s ease
                     opacity: 1
+
+    /**
+     * Small posts
+     */
+    &--sm
+        display: flex
+
+        &:not(:last-child)
+            border-bottom: 1px solid $gray-300
+            padding-bottom: 15px
+            margin-bottom: 15px
+
+        #{$self}
+            &__left
+                background-color: #c2c2c2
+                position: relative
+                margin-right: 15px
+                min-width: 69px
+                width: 69px
+                height: 69px
+
+                &-link
+                    display: block
+                    width: 100%
+                    height: 100%
+
+            &__comments
+                align-items: center
+                background-color: $red
+                color: $white
+                display: flex
+                font-size: 10px
+                justify-content: center
+                position: absolute
+                bottom: 0
+                right: 0
+                height: 20px
+                width: 22px
+
+                &::after
+                    border-left: 5px solid $red
+                    border-top: 4px solid transparent
+                    border-bottom: 4px solid transparent
+                    content: ""
+                    position: absolute
+                    top: 50%
+                    transform: translateY(-50%)
+                    right: -5px
+                    height: 0
+                    width: 0
+
+            &__title
+                font-size: 13px
+                font-weight: 700
+                line-height: 1.4
+                margin-bottom: 7px
+
+                &-link
+                    &:hover
+                        text-decoration: none

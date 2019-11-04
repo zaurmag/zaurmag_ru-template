@@ -45,7 +45,7 @@ aside.sidebar.sidebar__right.col-lg-4
         .widget__title
             span Популярное
 
-        .sm_posts
+        .posts.posts--sm
             -
                 var postsData = [
                     {
@@ -85,6 +85,6 @@ aside.sidebar.sidebar__right.col-lg-4
                     },
                 ];
             each item in postsData
-                .sm_post
+                article.post.post--sm
                     +sm_post(item.title, item.image, item.date, item.views, '', item.comments)
 
