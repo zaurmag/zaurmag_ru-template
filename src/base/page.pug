@@ -60,11 +60,16 @@ html(lang="en")
                 .container.main-container
                     if(pageClass != 'homepage')
                         //- Breadcrumbs
-                        nav.breadcrumbs
+                        nav.breadcrumbs.mb-6
                             ul.breadcrumbs__list
                                 li
-                                    a(href="#") Главная
-                                    span.divider /
+                                    a(href="/") Главная
+                                    span.breadcrumbs__divider >
+
+                                li
+                                    a(href="#") Категория
+                                    span.breadcrumbs__divider >
+
                                 li.breadcrumbs--active #{title}
 
                     .row
