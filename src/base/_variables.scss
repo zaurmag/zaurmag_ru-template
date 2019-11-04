@@ -6,12 +6,18 @@ $font-family-base: "Roboto", sans-serif;
 
 // Colors
 $gray-300: #dfdfdf;
+$gray-400: #c0c0c0;
 $gray-500: #b6b6b6;
 $gray-800: #505050;
 
 $red: #c24215;
 $orange: #ecb716;
 $teal: #1eb089;
+
+// Links
+$link-color: $red !default;
+$link-hover-color:                        darken($link-color, 15%) !default;
+$link-hover-decoration:                   underline !default;
 
 // Grid containers
 $container-max-widths: (xl: 1170px) !default;

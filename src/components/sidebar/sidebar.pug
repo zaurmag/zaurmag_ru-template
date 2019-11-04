@@ -88,3 +88,21 @@ aside.sidebar.sidebar__right.col-lg-4
                 article.post.post--sm
                     +sm_post(item.title, item.image, item.date, item.views, '', item.comments)
 
+    // Последние комментарии
+    .widget
+        .widget__title
+            span Последнии комментарии
+
+        .w_comments
+            .w_comment
+                +w-comment('Заур Магомедов', 'Мультиязычность в Joomla 3. Как сделать мультиязычный сайт на Joomla?', 'Здравствуйте. Я же изложил все подробно в статье. Почитайте все внимательно...')
+
+            .w_comment
+                +w-comment('Линда', 'Мультиязычность в Joomla 3. Как сделать мультиязычный сайт на Joomla?', 'Добрый день!Подскажите, пожалуйста, в скаченном шаблоне язык сайта английский. Поставила русский, вы...')
+
+            .w_comment
+                +w-comment('Заур Магомедов', 'Мультиязычность в Joomla 3. Как сделать мультиязычный сайт на Joomla?', 'Не за что Trina!')
+
+            .w_comment
+                +w-comment('Trina', 'Мультиязычность в Joomla 3. Как сделать мультиязычный сайт на Joomla?', 'I succeeded in everything perfectly. I even managed to translate the drop down menu :)Thank you so v...')
+

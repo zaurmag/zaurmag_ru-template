@@ -1,0 +1,12 @@
+mixin w-comment(author, article, text)
+    .w_comment__icon
+        +icon('share-square')
+
+    .w_comment__right
+        .w_comment__right-top
+            .w_comment__author= author + " в "
+            .w_comment__post
+                a.w_comment__post-link(href="#")= article
+
+        .w_comment__bottom
+            p= text

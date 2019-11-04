@@ -1,0 +1,51 @@
+.w_comment
+    $self: &
+    display: flex
+
+    &:not(:last-child)
+        border-bottom: 1px solid $gray-300
+        padding-bottom: 15px
+        margin-bottom: 15px
+
+    &:hover
+        #{$self}__icon
+            .icon
+                fill: #555
+                transition: fill 0.2s ease
+
+    &__icon
+        font-size: 15px
+        line-height: 1.2
+        margin-right: 15px
+
+        .icon
+            transition: fill 0.2s ease
+            fill: $gray-400
+
+    &__right
+        &-top
+            display: flex
+            font-size: 12px
+
+    &__author
+        color: $gray-400
+        white-space: nowrap
+        margin-right: 4px
+
+    &__post
+        color: $red
+        font-weight: 500
+        max-width: 200px
+
+        &-link
+            display: block
+            text-overflow: ellipsis
+            overflow: hidden
+            white-space: nowrap
+
+    &__bottom
+        margin-top: 5px
+
+        p
+            font-weight: 500
+            margin: 0
