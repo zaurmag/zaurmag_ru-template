@@ -1,11 +1,14 @@
 mixin sm_post(title, image, date, views, category, comments)
-    .sm_post__left
-        img(src="../images/sm_posts/"+ image +".jpg", alt= title, width="")
-        .sm_post__comments= comments
+    if(image || comments)
+        .sm_post__left
+            a.sm_post__left-link(href="#")
+                img.img-fluid(src="../images/sm_posts/"+ image +".jpg", alt= title, width="")
+            .sm_post__comments= comments
 
-    .sm_post__right
-        .sm_post__title
-            a(href="#")= title
+    if(title)
+        .sm_post__right
+            .sm_post__title
+                a.sm_post__link(href="#")= title
 
-        .info-block.info-block--sm
-            +infoBlock(false, date, views, category, '')
+            .info-block.info-block--sm
+                +infoBlock(false, date, views, category, '')
