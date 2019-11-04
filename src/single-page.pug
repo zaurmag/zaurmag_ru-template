@@ -17,7 +17,6 @@ block columns
 
                 .info-block
                     +infoBlock('Заур Магомедов', 'Окт 26, 2019', '37', 'JavaScript', 0)
-
             // Text
             .textblock
                 p Доброго времени суток уважаемые посетители! Небольшое вступление про то, что давно не писал на блоге. Причина — строительство своего дома. Стройка отняла у меня очень много времени, начиная с теории, заканчивая практикой. Ведь кроме фундамента, стен и кровли все остальное делал сам своими руками. Так как я не профессионал в этом деле, много времени убил на получение теоретических знаний, просматривая ролики в Ютуб. Сейчас не буду все расписывать, это отдельная тема для разговора. Возможно создам отдельный проект на эту тему, так как многое фиксировал на видеокамеру. Ну а сейчас же затронем тему видео-роликов Ютуб.
@@ -43,9 +42,26 @@ block columns
                     li.tags__item
                         a.tags__link(href="#") #видео
 
+
             // Author block
             .author-block.my-6
                 include ./components/author-block/author-block
+
+            // Single page nav
+            .single-page__navigation.row.no-gutters
+                .col-sm-6.single-page__nav.single-page--prev
+                    a.single-page__link(href="#")
+                        span.single-page__link-icon
+                            +icon('long-arrow-left')
+
+                        span.single-page__link-tlt Обзор видеокамеры Panasonic V770 + штатив и петлица
+
+                .col-sm-6.single-page__nav.single-page--next
+                    a.single-page__link(href="#")
+                        span.single-page__link-tlt Отзыв о книге «Атлант расправил плечи» + 3 небольшие книги для прочтения
+
+                        span.single-page__link-icon
+                            +icon('long-arrow-right')
 
     include components/sidebar/sidebar
 
