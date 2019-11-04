@@ -40,6 +40,22 @@ aside.sidebar.sidebar__right.col-lg-4
 
                 button.mt-3.btn.btn-block.btn-danger.btn-tt_up(type="submit") Подписаться
 
+
+    // Подписка на канал Телеграм
+    .widget
+        .widget__title
+            span Канал в Телеграм
+
+        p Пользователи Телеграм получают раньше всего рассылку. Поэтому получайте оповещения мнгновенно.
+        .social-subscr.social-subscr--telegram
+            a.social-subscr__link(href="https://t.me/zaur_mag", target="_blank" rel="nofollow")
+                span.social-subscr__icon
+                    +icon('telegram-plane')
+
+                span.social-subscr__right
+                    span.social-subscr__tlt @zaur_mag
+                    span.social-subscr__subscribers Подписаться
+
     // Популярное
     .widget
         .widget__title

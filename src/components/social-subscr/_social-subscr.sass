@@ -1,0 +1,64 @@
+.social-subscr
+    $self: &
+
+    border-radius: 2px
+    overflow: hidden
+    height: 70px
+    max-width: 60%
+
+    &--telegram
+        background-color: #1197d6
+
+    &__link
+        color: $white
+        display: flex
+        text-decoration: none
+        height: 100%
+
+        &:hover
+            color: $white
+            text-decoration: none
+
+            #{$self}__right
+                transition: background-color 0.2s ease
+                background-color: darken(#1197d6, 10%)
+
+    &__icon
+        align-items: center
+        background-color: darken(#1197d6, 10%)
+        display: flex
+        min-width: 70px
+        justify-content: center
+        width: 70px
+
+        #{$self}__link
+            align-items: center
+            display: flex
+            justify-content: center
+            height: 100%
+            width: 100%
+
+        .icon
+            fill: $white
+            font-size: 30px
+
+    &__right
+        background-color: transparent
+        display: flex
+        padding: 0 15px
+        text-align: center
+        flex-direction: column
+        justify-content: center
+        transition: background-color 0.2s ease
+        width: 100%
+
+    &__tlt
+        display: block
+        font-size: 20px
+        font-weight: 500
+
+    &__subscribers
+        display: block
+        color: $white
+        font-size: 12px
+
