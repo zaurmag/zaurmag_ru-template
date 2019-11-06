@@ -1,0 +1,32 @@
+.pagination
+    $self: &
+    border-top: 2px solid $gray-500
+    padding-top: 15px
+
+    &__list
+        align-items: center
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        font-size: 14px
+
+    li
+        &#{$self}__item
+            margin: 0 3px
+
+    &__link
+        align-items: center
+        background-color: $gray-300
+        border-radius: 4px
+        color: $gray-600
+        display: flex
+        justify-content: center
+        min-width: 32px
+        transition: background-color 0.2s ease
+        height: 32px
+
+        &:hover
+            background-color: $red
+            color: $white
+            text-decoration: none
+            transition: background-color 0.2s ease

@@ -56,13 +56,11 @@ html(lang="en")
                 //- Main menu
                 include ../components/main-menu/main-menu
 
-                block top-position
-
                 .container.main-container
                     if(pageClass != 'homepage')
                         //- Breadcrumbs
                         nav.breadcrumbs.mb-6
-                            ul.breadcrumbs__list
+                            ul.nav.breadcrumbs__list
                                 li
                                     a(href="/") Главная
                                     span.breadcrumbs__divider >
@@ -73,19 +71,23 @@ html(lang="en")
 
                                 li.breadcrumbs--active #{title}
 
+                    // Media block
+                    .media-block.mb-6
+                        block media
+
+                    // Block columns
                     .row
                         block columns
-
-                block bottom-position
 
             //- Include footer
             include ../components/footer/footer
 
+        a.go-top(href='#', style='display:none;')
+            +icon('arrow-up')
+
         .d-none
             include ../../dist/images/sprite.svg
 
-        a.go_top_link(href='#', style='display:none;')
-            +icon('arrow-up')
         script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
         script(src='./js/scripts.js')
         block script

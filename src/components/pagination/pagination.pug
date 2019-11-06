@@ -1,0 +1,16 @@
+ul.pagination__list.nav
+    li.pagination__item.pagination--prev
+        a.pagination__link(href="#")
+            +icon('long-arrow-left')
+
+    - for(var i = 1; i < 8; i++)
+        if(i == 4)
+            li.pagination__item
+                a.pagination__link(href="#") ...
+        else
+            li.pagination__item
+                a.pagination__link(href="#")= i
+
+    li.pagination__item.pagination--next
+        a.pagination__link(href="#")
+            +icon('long-arrow-right')

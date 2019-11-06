@@ -2,20 +2,21 @@
    INCLUDS
    ========================================================================= */
 
-@import 'variables'
-//@import '../mixins/sass/sprite-img'
+@import './variables'
+@import '../libs/bootstrap/bootstrap'
+@import '../mixins/sass/sprite-img'
 @import '../mixins/sass/sprite-svg'
 @import '../mixins/sass/pos-center'
 @import '../mixins/sass/responsive-title'
 @import '../mixins/sass/letter-spacing'
 @import '../mixins/sass/font-face'
-@import './fonts'
-@import '../libs/bootstrap/bootstrap'
 
 /**
  * Base
  */
+@import './fonts'
 @import './base'
+@import './png-icons'
 
 /**
  * Static blocks
@@ -29,17 +30,6 @@
 @import "../components/footer/footer"
 @import '../components/main-wrap/main-wrap'
 @import '../components/textblock/textblock'
-@import '../components/loadmore/loadmore'
-@import '../components/w_search/w_search'
-@import '../components/form/form'
-@import '../components/widget/widget'
-@import '../components/footer-nav/footer-nav'
-@import '../components/slider-courses/slider-courses'
-@import '../components/w_comment/w_comment'
-@import '../components/social-subscr/social-subscr'
-@import '../components/author-block/author-block'
-@import '../components/tags/tags'
-@import '../components/single-page/single-page'
 
 /**
  * Dev blocks
@@ -54,6 +44,20 @@
 @import '../components/post/post'
 @import '../components/info-block/info-block'
 @import '../components/c_comments/c_comments'
+@import '../components/pagination/pagination'
+@import '../components/loadmore/loadmore'
+@import '../components/w_search/w_search'
+@import '../components/form/form'
+@import '../components/widget/widget'
+@import '../components/footer-nav/footer-nav'
+@import '../components/slider-courses/slider-courses'
+@import '../components/w_comment/w_comment'
+@import '../components/social-subscr/social-subscr'
+@import '../components/author-block/author-block'
+@import '../components/tags/tags'
+@import '../components/single-page/single-page'
+@import '../components/section/section'
+//@import '../components/media-block/media-block'
 
 /**
  * Libs styles
@@ -61,3 +65,5 @@
 @import '../libs/magnific-popup/main'
 @import '../libs/owl-carousel/owl.carousel'
 @import '../libs/owl-carousel/owl.theme.default'
+@import '../libs/go-top/go-top'
+@import '../libs/lazyYT/lazyYT'

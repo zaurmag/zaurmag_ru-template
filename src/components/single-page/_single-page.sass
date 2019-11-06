@@ -1,6 +1,9 @@
 .single-page
     $self: &
 
+    &__title
+        @include responsive-tlt(24px, 30px)
+
     // Navigation
     &__navigation
         background-color: #f4f4f4
@@ -66,9 +69,16 @@
             margin-bottom: 10px
 
         &-list
-            list-style: square
             margin-left: 30px
+            font-size: 15px
 
         &-item
             &:not(:last-child)
-                margin-bottom: 3px
+                margin-bottom: 5px
+
+        &-link
+            color: $gray-800
+            text-decoration: underline
+
+            &:hover
+                color: $red

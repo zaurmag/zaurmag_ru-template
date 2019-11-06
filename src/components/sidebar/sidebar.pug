@@ -44,17 +44,28 @@ aside.sidebar.sidebar__right.col-lg-4
     // Подписка на канал Телеграм
     .widget
         .widget__title
-            span Канал в Телеграм
+            span Соц. сети
 
-        p Пользователи Телеграм получают раньше всего рассылку. Поэтому получайте оповещения мнгновенно.
-        .social-subscr.social-subscr--telegram
-            a.social-subscr__link(href="https://t.me/zaur_mag", target="_blank" rel="nofollow")
-                span.social-subscr__icon
-                    +icon('telegram-plane')
+        p Получайте уведомления в соц.сетях о выходе новых материалов. Например, пользователи Телеграм получают раньше всего рассылку.
+        .row.no-gutters
+            .col-6.pr-1
+                .social-subscr.social-subscr--telegram
+                    a.social-subscr__link(href="https://t.me/zaur_mag", target="_blank" rel="nofollow")
+                        span.social-subscr__icon
+                            +icon('telegram-plane')
 
-                span.social-subscr__right
-                    span.social-subscr__tlt @zaur_mag
-                    span.social-subscr__subscribers Подписаться
+                        span.social-subscr__right
+                            span.social-subscr__tlt @zaur_mag
+                            span.social-subscr__subscribers Подписаться
+            .col-6.pl-1
+                .social-subscr.social-subscr--youtube
+                    a.social-subscr__link(href="https://www.youtube.com/channel/UC7SJL4fVQsDyk7qIV3GZ_PQ", target="_blank" rel="nofollow")
+                        span.social-subscr__icon
+                            +icon('youtube-logo')
+
+                        span.social-subscr__right
+                            span.social-subscr__tlt 771
+                            span.social-subscr__subscribers Подписчиков
 
     // Популярное
     .widget
@@ -62,45 +73,7 @@ aside.sidebar.sidebar__right.col-lg-4
             span Популярное
 
         .posts.posts--sm
-            -
-                var postsData = [
-                    {
-                        "title" : "Цветовой профиль в фотошопе и его настройка",
-                        "image" : "1642-featured-208x0",
-                        "date" : "Ноя 03, 2013",
-                        "views" : "114 183",
-                        "comments": "74"
-                    },
-                    {
-                        "title" : "Мультиязычность в Joomla 3. Как сделать мультиязычный сайт на Joomla?",
-                        "image" : "2219-featured-208x0",
-                        "date" : "Авг 16, 2014",
-                        "views" : "147278",
-                        "comments": "480"
-                    },
-                    {
-                    "title" : "Как выровнять горизонтальное меню по центру?",
-                    "image" : "146-featured-208x0",
-                    "date" : "Дек 01, 2012",
-                    "views" : "70 980",
-                    "comments": "113"
-                    },
-                    {
-                    "title" : "Как открыть сайт в локальной сети с локального компьютера?",
-                    "image" : "2947-featured-208x0",
-                    "date" : "Авг 16, 2014",
-                    "views" : "49 744",
-                    "comments": "59"
-                    },
-                    {
-                    "title" : "Создаем всплывающие окна для сайта — Magnific Popup",
-                    "image" : "3130-featured-208x0",
-                    "date" : "Авг 18, 2016",
-                    "views" : "74 698",
-                    "comments": "113"
-                    },
-                ];
-            each item in postsData
+            each item in smPostsData
                 article.post.post--sm
                     +sm_post(item.title, item.image, item.date, item.views, '', item.comments)
 

@@ -1,0 +1,261 @@
+extends ./base/page
+
+block variables
+    - var title = 'Элементы страницы'
+    - var pageClass = 'single-page'
+
+block columns
+    main.content.content__right.col-lg-8
+        article.single-page.post
+            h1= title
+
+            // Paragraph
+            section.section.mb-5
+                header.section__title
+                    h2.section__title-main Абзац
+                    span.section__title-muted Параграф, ссылка, жирный, курсив
+
+                .textblock
+                    p Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас <strong>анализа</strong> существенных финансовых и <em>административных условий</em>. Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий играет важную роль в формировании соответствующий <a href="#">условий активизации</a>. Равным образом постоянный количественный рост и сфера нашей активности требуют от нас анализа новых предложений. Таким образом рамки и место обучения кадров позволяет оценить значение направлений прогрессивного развития.
+
+            // Headers
+            section.section.mb-5
+                header.section__title
+                    h2.section__title-main Заголовки
+                    span.section__title-muted h1 - h6
+
+                h1 Заголовок 1
+                h2 Заголовок 2
+                h3 Заголовок 3
+                h4 Заголовок 4
+                h5 Заголовок 5
+                h6 Заголовок 6
+
+            // Blockquote
+            section.section.mb-5
+                header.section__title
+                    h2.section__title-main Цитата
+
+                .textblock
+                    blockquote
+                        | Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас
+                        span Изветсный человек
+
+            // Text elements
+            section.section.mb-5
+                header.section__title
+                    h2.section__title-main Текстовые элементы
+                    span.section__title-muted Подсветка, маленький шрифт и т. д.
+
+                p You can use the mark tag to
+                    mark highlight
+                    | text.
+                p
+                    del This line of text is meant to be treated as deleted text.
+                p
+                    s This line of text is meant to be treated as no longer accurate.
+                p
+                    ins This line of text is meant to be treated as an addition to the document.
+                p
+                    u This line of text will render as underlined
+                p
+                    small This line of text is meant to be treated as fine print.
+                p
+                    strong This line rendered as bold text.
+                p
+                    em This line rendered as italicized text.
+
+            // Buttons
+            section.section.mb-5
+                header.section__title
+                    h2.section__title-main Кнопки
+                    span.section__title-muted Маленькие, Средние, Большие
+
+                // Sm
+                .mb-6
+                    a.btn.btn-primary.btn-sm.px-3.mr-1(href="#") Primary
+                    a.btn.btn-secondary.btn-sm.px-3.mr-1(href="#") Secondary
+                    a.btn.btn-success.btn-sm.px-3.mr-1(href="#") Success
+                    a.btn.btn-danger.btn-sm.px-3.mr-1(href="#") Danger
+                    a.btn.btn-warning.btn-sm.px-3.mr-1(href="#") Warning
+                    a.btn.btn-info.btn-sm.px-3.mr-1(href="#") Info
+                    a.btn.btn-light.btn-sm.px-3.mr-1(href="#") Light
+                    a.btn.btn-dark.btn-sm.px-3(href="#") Dark
+
+                //Normal
+                .mb-6
+                    a.btn.btn-primary.px-3.mr-1(href="#") Primary
+                    a.btn.btn-secondary.px-3.mr-1(href="#") Secondary
+                    a.btn.btn-success.px-3.mr-1(href="#") Success
+                    a.btn.btn-danger.px-3.mr-1(href="#") Danger
+                    a.btn.btn-warning.px-3.mr-1(href="#") Warning
+                    a.btn.btn-info.px-3.mr-1(href="#") Info
+                    a.btn.btn-light.px-3.mr-1(href="#") Light
+                    a.btn.btn-dark.px-3(href="#") Dark
+
+                //Lg
+                .mb-6
+                    a.btn.btn-primary.btn-lg.px-4.mb-1.mr-1(href="#") Primary
+                    a.btn.btn-secondary.btn-lg.px-4.mb-1.mr-1(href="#") Secondary
+                    a.btn.btn-success.btn-lg.px-4.mb-1.mr-1(href="#") Success
+                    a.btn.btn-danger.btn-lg.px-4.mb-1.mr-1(href="#") Danger
+                    a.btn.btn-warning.btn-lg.px-4.mb-1.mr-1(href="#") Warning
+                    a.btn.btn-info.btn-lg.px-4.mb-1.mr-1(href="#") Info
+                    a.btn.btn-light.btn-lg.px-4.mb-1.mr-1(href="#") Light
+                    a.btn.btn-dark.btn-lg.px-4.mb-1(href="#") Dark
+
+                //Outline
+                .mb-6
+                    a.btn.btn-outline-primary.px-3.mr-1(href="#") Primary
+                    a.btn.btn-outline-secondary.px-3.mr-1(href="#") Secondary
+                    a.btn.btn-outline-success.px-3.mr-1(href="#") Success
+                    a.btn.btn-outline-danger.px-3.mr-1(href="#") Danger
+                    a.btn.btn-outline-warning.px-3.mr-1(href="#") Warning
+                    a.btn.btn-outline-info.px-3.mr-1(href="#") Info
+                    a.btn.btn-outline-light.px-3.mr-1(href="#") Light
+                    a.btn.btn-outline-dark.px-3(href="#") Dark
+
+                .row.mb-6
+                    .col-md-6.mb-3.mb-md-0
+                        a.btn.btn-primary.px-3.btn-block(href="#") Во всю ширину
+
+                    .col-md-6
+                        a.btn.btn-success.px-3.btn-block(href="#") Во всю ширину
+
+                a.btn.btn-outline-danger.btn-lg.px-3.mr-1(href="#")
+                    span.mr-2 С иконкой
+                    +icon('long-arrow-right')
+
+
+            // Lists
+            section.section.mb-5
+                header.section__title
+                    h2.section__title-main Списки
+                    span.section__title-muted Нумерованный, Форматированный, Стилизованный, С линиями
+
+                .row
+                    .col-md-3
+                        ol.ml-3
+                            - for(var i = 1; i < 6; i++)
+                                li Пункт пункт пункт №#{i}
+
+                    .col-md-3
+                        ul.ml-3
+                            - for(var i = 1; i < 6; i++)
+                                li Пункт пункт пункт №#{i}
+
+                    .col-md-3
+                        ul.ml-0.list-arrow
+                            - for(var i = 1; i < 6; i++)
+                                li Пункт пункт пункт №#{i}
+
+                    .col-md-3
+                        ul.ml-0.list-lines
+                            - for(var i = 1; i < 4; i++)
+                                li Не следует, однако забывать, что начало
+
+
+            // Alerts
+            section.section.mb-5
+                header.section__title
+                    h2.section__title-main Алерты
+                    span.section__title-muted Все виды
+
+                // Info
+                .alert.alert-info
+                    h3.alert-heading Info
+                    | Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас анализа существенных финансовых и административных условий.
+
+                // Secondary
+                .alert.alert-secondary
+                    h3.alert-heading Secondary
+                    | Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас анализа существенных финансовых и административных условий.
+
+                // Success
+                .alert.alert-success
+                    h3.alert-heading Success
+                    | Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас анализа существенных финансовых и административных условий.
+
+                // Danger
+                .alert.alert-danger
+                    h3.alert-heading Danger
+                    | Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас анализа существенных финансовых и административных условий.
+
+                // Warning
+                .alert.alert-warning
+                    h3.alert-heading Warning
+                    | Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас анализа существенных финансовых и административных условий.
+
+                // Light
+                .alert.alert-light
+                    h3.alert-heading Light
+                    | Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас анализа существенных финансовых и административных условий.
+
+                // Dark
+                .alert.alert-dark
+                    h3.alert-heading Dark
+                    | Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас анализа существенных финансовых и административных условий.
+
+                h2 Алерты с иконками
+
+                // Info
+                .alert.alert-info.alert-icon Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас анализа существенных финансовых и административных условий.
+
+                // Warning
+                .alert.alert-warning.alert-icon Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас анализа существенных финансовых и административных условий.
+
+                // Success
+                .alert.alert-success.alert-icon Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас анализа существенных финансовых и административных условий.
+
+                // Danger
+                .alert.alert-danger.alert-icon Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас анализа существенных финансовых и административных условий.
+
+
+            // Forms
+            section.section.mb-5
+                header.section__title
+                    h2.section__title-main Форма
+
+                .form
+                    .form__header
+                        p.m-0 Текст до формы
+
+                    fieldset.form__fields
+                        .form-row
+                            .col-md-6.mb-3
+                                .form__element
+                                    .form__label Ваше имя *
+                                    input.form__input(type="text")
+
+                            .col-md-6.mb-3
+                                .form__element
+                                    .form__label Ваше email *
+                                    input.form__input(type="email")
+
+                        .form__element.form__element--textarea
+                            textarea.form__input.form__input--textarea(placeholder="Текст сообщения *")
+
+                    .mt-3
+                        button.btn.btn-danger.btn-lg.px-3(type="submit")
+                            span.mr-1 Отправить
+
+                    .form__footer
+                        .textblock.small
+                            p.m-0 Текст после формы
+
+
+
+
+            // Demo- download
+            section.section.mb-5
+                header.section__title
+                    h2.section__title-main Demo - Download
+
+                .demo-download
+                    a.demo(href="#") Демо
+                    a.download(href="#") Скачать
+
+
+    //- Include sidebar
+    include ./components/sidebar/sidebar
+

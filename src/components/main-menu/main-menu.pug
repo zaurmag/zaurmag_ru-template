@@ -4,7 +4,7 @@ nav.main-menu.mb-6
         include ../hamburger/hamburger
 
         //- Menu list
-        ul.main-menu__nav
+        ul.main-menu__nav.nav
             each item in navData
                 case item.dropdown
                     when true
@@ -14,7 +14,7 @@ nav.main-menu.mb-6
                                     +icon(item.icon)
                                 = item.text
 
-                            ul.main-menu__nav-child
+                            ul.main-menu__nav-child.nav
                                 each itemChilds in item.itemList
                                     li
                                         a(href= itemChilds.link)= itemChilds.text

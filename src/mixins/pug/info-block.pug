@@ -21,14 +21,15 @@ mixin infoBlock(author, date, views, category, comments)
             | в
             a.text-success.ml-1(href="#")= category
 
-    span.info-block__item
-        +icon('comments')
+    if(comments !== '')
+        span.info-block__item
+            +icon('comments')
 
-        if(comments == 0)
             a.mr-1.text-danger(href="#")
-                | Комментариев нет
-        else
-            a.mr-1.text-danger(href="#")
-                = comments
-            | Комментариев
+                if(comments === 0)
+                    | Комментариев нет
+
+                else
+                    = comments
+                    |  Комментариев
 

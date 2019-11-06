@@ -1,8 +1,7 @@
 // ======= Go Top =======
-
 (function($) {
     jQuery.fn.scrollToTop = function() {
-        $(this).hide().removeAttr("href");
+        $(this).hide();
         if ($(window).scrollTop() != "0") {
             $(this).fadeIn("slow")
         }
@@ -14,10 +13,12 @@
                 $(scrollDiv).fadeIn("slow")
             }
         });
-        $(this).click(function() {
+        $(this).on('click', function(e) {
+            e.preventDefault();
+
             $("html, body").animate({
                 scrollTop: 0
-            }, "slow")
+            }, 300)
         });
     }
 })(jQuery);

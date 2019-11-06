@@ -1,0 +1,70 @@
+extends ./base/page
+
+block variables
+    - var title = 'Отзыв о книге «Атлант расправил плечи» + 3 небольшие книги для прочтения'
+    - var pageClass = 'single-page'
+
+block media
+    .lazyYT(data-youtube-id="l9j4Vtfq-7A" data-ratio="16:9")= title
+
+block columns
+    main.content.content__right.col-lg-8
+        article.single-page.post
+            header.post__header
+                h1.single-page__title= title
+
+                .info-block
+                    +infoBlock('Заур Магомедов', 'Янв 25, 2019', '2415', 'Видеоуроки', 2)
+            .textblock
+                p Всем привет! Сегодня, как и обещал в данном видео хочу оставить свой отзыв о прочтенной книге «Атлант расправил плечи».
+                p Также проведу небольшой обзор тех книг, которые я получил с Озон и собираюсь читать. Надеюсь кому-то пригодится.
+                p Встретимся в других обзорах!
+
+            // Tags
+            .tags
+                ul.tags__list
+                    li.tags__item
+                        a.tags__link(href="#") #youtube
+
+                    li.tags__item
+                        a.tags__link(href="#") #javascript
+
+                    li.tags__item
+                        a.tags__link(href="#") #видео
+
+            // Author block
+            .author-block.my-6
+                include ./components/author-block/author-block
+
+            // Related items
+            .single-page__related
+                .single-page__related-tlt Читайте также:
+                ol.single-page__related-list
+                    each name in ['Что делать если фотошоп не видит шрифты?', 'Языковые файлы Joomla. Переопределение языковых констант в Joomla 2.5', 'Отложенная загрузка видео Ютуб на сайте']
+                        li.single-page__related-item
+                            a.single-page__related-link(href="#")= name
+
+            // Single page nav
+            .single-page__navigation.row.no-gutters
+                .col-sm-6.single-page__nav.single-page--prev
+                    a.single-page__link(href="#")
+                        span.single-page__link-icon
+                            +icon('long-arrow-left')
+
+                        span.single-page__link-tlt Обзор видеокамеры Panasonic V770 + штатив и петлица
+
+                .col-sm-6.single-page__nav.single-page--next
+                    a.single-page__link(href="#")
+                        span.single-page__link-tlt Отзыв о книге «Атлант расправил плечи» + 3 небольшие книги для прочтения
+
+                        span.single-page__link-icon
+                            +icon('long-arrow-right')
+
+
+            // ===== Comments ================
+            .c_comments.mt-5
+                include ./components/c_comments/c_comments
+
+    //- Include sidebar
+    include ./components/sidebar/sidebar
+

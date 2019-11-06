@@ -1,13 +1,35 @@
 .social-subscr
     $self: &
 
+    background-color: $gray-800
     border-radius: 2px
     overflow: hidden
-    height: 70px
-    max-width: 60%
+    height: 68px
 
+    // Telegram
     &--telegram
         background-color: #1197d6
+
+        #{$self}
+            &__icon
+                background-color: darken(#1197d6, 10%)
+
+            &__link
+                &:hover
+                    background-color: darken(#1197d6, 10%)
+
+    // Youtube
+    &--youtube
+        background-color: #cc181e
+
+        #{$self}
+            &__icon
+                background-color: darken(#cc181e, 10%)
+
+            &__link
+                &:hover
+                    #{$self}__right
+                        background-color: darken(#cc181e, 10%)
 
     &__link
         color: $white
@@ -20,16 +42,18 @@
             text-decoration: none
 
             #{$self}__right
+                background-color: darken($gray-800, 10%)
                 transition: background-color 0.2s ease
-                background-color: darken(#1197d6, 10%)
 
+
+    // Icon
     &__icon
         align-items: center
-        background-color: darken(#1197d6, 10%)
+        background-color: darken($gray-800, 10%)
         display: flex
-        min-width: 70px
         justify-content: center
-        width: 70px
+        min-width: 68px
+        width: 68px
 
         #{$self}__link
             align-items: center
@@ -42,10 +66,11 @@
             fill: $white
             font-size: 30px
 
+    // Right
     &__right
         background-color: transparent
         display: flex
-        padding: 0 15px
+        padding: 0 10px
         text-align: center
         flex-direction: column
         justify-content: center
@@ -54,11 +79,11 @@
 
     &__tlt
         display: block
-        font-size: 20px
+        font-size: 16px
         font-weight: 500
 
     &__subscribers
         display: block
         color: $white
-        font-size: 12px
+        font-size: 11px
 

@@ -1,12 +1,13 @@
 nav.top-menu
-    ul.top-menu__list
+    ul.top-menu__list.nav
         - var i = 0;
-        each name in ['Главная', 'Обо мне', 'Мои услуги', 'Портфолио', 'Мои видеокурсы', 'Контакы' ]
+
+        each item in topNavData
             if(i == 0)
                 li.top-menu__item.top-menu--active
-                    a.top-menu__link(href="#")= name
+                    a.top-menu__link(href=item.link)= item.text
                 - i++
             else
                 li.top-menu__item
-                    a.top-menu__link(href="#")= name
+                    a.top-menu__link(href=item.link)= item.text
                 - i++

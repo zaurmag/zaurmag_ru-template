@@ -25,6 +25,9 @@
             .c_comments__comment-parent
                 +comment('', 'Виктор', 'Июл 23, 2019 в 11:50', 'Здравствуйте, Заур. Сделал по вашей инструкции, на ПК все получилось0, поставил переключатель в позицию menu. А на мобильном в позиции offcanvas переключатель языков не отображается. Подскажите решение.')
 
+    nav.pagination.c_comment__pagination.mt-6
+        include ../pagination/pagination
+
 // Form
 .c_comments__form.mt-5
     .c_comments__form-tlt.h4 Оставить комментарий
@@ -63,6 +66,6 @@
                         label.form__checkbox-label(for="subscrComments") Получать новые комментарии по электронной почте. Вы можете  <a href="#">подписаться</a> без комментирования.
                 .col-md-3.form__footer-right.text-md-right
                     button.btn.btn-danger.btn-lg.px-3(type="submit")
-                        sppan.mr-1 Отправить
+                        span.mr-1 Отправить
                         +icon('long-arrow-right')
 
