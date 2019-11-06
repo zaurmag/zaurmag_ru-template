@@ -1,0 +1,42 @@
+extends ./base/page
+
+block variables
+    - var title = 'Контакты'
+    - var pageClass = 'single-page'
+
+block columns
+    main.content.content__no-cols.col-12
+        article.single-page.post
+            header.post__header
+                h1.single-page__title.m-0= title
+
+            .row
+                .col-md-6
+                    .textblock
+                        p Для связи со мной воспользуйтесь формой обратной связи ниже. Я обязательно вам отвечу, как будет возможность. Обычно я отвечаю на письма в течении суток.
+
+                    .form
+                        .form__header
+                            p.m-0 Поля, отмеченные *, обязательны для заполнения!
+
+                        fieldset.form__fields
+                            .form-row
+                                .col-md-6.mb-3
+                                    .form__element
+                                        .form__label Ваше имя *
+                                        input.form__input(type="text")
+
+                                .col-md-6.mb-3
+                                    .form__element
+                                        .form__label Ваше email *
+                                        input.form__input(type="email")
+
+                            .form__element.form__element--textarea
+                                textarea.form__input.form__input--textarea(placeholder="Текст сообщения *")
+
+                        .mt-3
+                            button.btn.btn-secondary.px-3(type="submit")
+                                span.mr-1 Отправить
+
+                .col-md-6
+                    img.img-fluid(src="../images/zaurmag-rif-kavkaz.jpg", alt="Заур Магомедов", width="")
