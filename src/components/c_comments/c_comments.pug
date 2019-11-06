@@ -1,0 +1,68 @@
+.c_comments__title
+    span.c_comments__title-count 2
+    |  комментария к статье
+    span.c_comments__title-postname  "#{title}"
+
+// Comments
+.c_comments__comments
+    ul.c_comments__list
+        li.c_comments__comment
+            .c_comments__comment-parent
+                +comment('', 'Линда', 'Окт 27, 2019 в 22:20', 'Добрый день! Подскажите, пожалуйста, в скаченном шаблоне язык сайта английский. Поставила русский, выбрала его по умолчанию, в Языках контента главным стоит Английский, как сделать русский?')
+            // Children
+            ul.c_comments__children
+                li.c_comments__comment
+                    .c_comments__children-icon
+                        +icon('right-arrow')
+                    .c_comments__comment-parent.c_comments__comment--admin
+                        +comment('../images/author-block/zaurmag.jpg', 'Заур Магомедов', 'Окт 28, 2019 в 0:09', 'Здравствуйте. Я же изложил все подробно в статье. Почитайте все внимательно…')
+
+        li.c_comments__comment
+            .c_comments__comment-parent
+                +comment('', 'Андрей', 'Июн 17, 2019 в 2:22', 'Joomla 3.9.4 сайт на украинском хочу поставить еще и русский выдает ошибку при сознание языка в «настройках языка» #Помилка Збереження неможливе внаслідок помилки: Налаштування мови вже існують із цим мовним кодом# Помогите !!!')
+
+        li.c_comments__comment
+            .c_comments__comment-parent
+                +comment('', 'Виктор', 'Июл 23, 2019 в 11:50', 'Здравствуйте, Заур. Сделал по вашей инструкции, на ПК все получилось0, поставил переключатель в позицию menu. А на мобильном в позиции offcanvas переключатель языков не отображается. Подскажите решение.')
+
+// Form
+.c_comments__form.mt-5
+    .c_comments__form-tlt.h4 Оставить комментарий
+
+    .form
+        .form__header
+            p.m-0 Ваш e-mail не будет опубликован. Обязательные поля помечены *
+        fieldset.form__fields
+            .form-row
+                .col-md-6.mb-3
+                    .form__element
+                        .form__label Ваше имя *
+                        input.form__input(type="text")
+
+                .col-md-6.mb-3
+                    .form__element
+                        .form__label Ваше email *
+                        input.form__input(type="email")
+
+            .form__element.form__element--textarea
+                textarea.form__input.form__input--textarea(placeholder="Текст комментария *")
+
+        .form__footer
+            .textblock.small
+                p.m-0 Если вы хотите вставить в текст комментария код HTML, CSS, PHP, JavaScript, то обрамите код в соответствии необходимыми тегами:
+                ul
+                    li Код HTML - тегами [html] ваш код... [/html]
+                    li Код CSS - тегами [css] ваш код... [/css]
+                    li Код PHP - тегами [php] ваш код... [/php]
+                    li Код JavaScript - тегами [code lang="js"] ваш код... [/code]
+
+            .row.align-items-center.mt-4
+                .col-md-9.form__footer-left
+                    .form__checkbox
+                        input.form__checkbox-input#subscrComments(type="checkbox")
+                        label.form__checkbox-label(for="subscrComments") Получать новые комментарии по электронной почте. Вы можете  <a href="#">подписаться</a> без комментирования.
+                .col-md-3.form__footer-right.text-md-right
+                    button.btn.btn-danger.btn-lg.px-3(type="submit")
+                        sppan.mr-1 Отправить
+                        +icon('long-arrow-right')
+

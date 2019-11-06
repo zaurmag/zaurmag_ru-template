@@ -42,10 +42,17 @@ block columns
                     li.tags__item
                         a.tags__link(href="#") #видео
 
-
             // Author block
             .author-block.my-6
                 include ./components/author-block/author-block
+
+            // Related items
+            .single-page__related
+                .single-page__related-tlt Читайте также:
+                ul.single-page__related-list
+                    each name in ['Что делать если фотошоп не видит шрифты?', 'Языковые файлы Joomla. Переопределение языковых констант в Joomla 2.5', 'Отложенная загрузка видео Ютуб на сайте']
+                        li.single-page__related-item
+                            a.single-page__related-link(href="#")= name
 
             // Single page nav
             .single-page__navigation.row.no-gutters
@@ -63,5 +70,11 @@ block columns
                         span.single-page__link-icon
                             +icon('long-arrow-right')
 
-    include components/sidebar/sidebar
+
+            // ===== Comments ================
+            .c_comments.mt-5
+                include ./components/c_comments/c_comments
+
+    //- Include sidebar
+    include ./components/sidebar/sidebar
 

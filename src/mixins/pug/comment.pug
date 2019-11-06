@@ -1,0 +1,21 @@
+mixin comment(avatar, userName, date, text)
+    .c_comments__comment-left
+        if(avatar)
+            img.c_comments__comment-avatar(src= avatar, alt= userName, width="64")
+        else
+            img.c_comments__comment-avatar(src='https://secure.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=64', alt= userName, width="64")
+
+    .c_comment_-comment-right
+        .c_comments__comment-meta
+            .c_comments__comment-author
+                a(href="#")= userName
+
+            .c_comments__comment-date= date
+
+        .c_comments__comment-text
+            p= text
+
+        .c_comments__comment-footer
+            a.c_comments__comment-reply(href="#")
+                | Ответить
+                +icon('retweet')

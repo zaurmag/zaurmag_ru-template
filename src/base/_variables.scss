@@ -34,8 +34,9 @@ $spacers: map-merge(
 
 // Buttons
 $btn-border-radius:           0 !default;
-$btn-border-radius-lg:        0 !default;
+$btn-border-radius-lg:        3px !default;
 $btn-border-radius-sm:        1.7px !default;
+$btn-font-size-lg:            16px !default;
 
 // Themes
 $secondary:     $gray-500 !default;

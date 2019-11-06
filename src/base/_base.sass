@@ -59,14 +59,22 @@ p
     font-size: 13px
     line-height: 1.54
 
+    &.small
+        font-size: 13px !important
+
+/**
+ * Type
+ */
+.small
+    font-size: 13px
+
+
 /**
  * Buttons
  */
 .btn
     align-items: center
-    border-radius: 2.4px
     display: inline-flex
-    font-size: 14px
     font-weight: 500
     justify-content: center
 
@@ -74,6 +82,8 @@ p
         box-shadow: inset 0 3px 0 0 rgba(0, 0, 1, 0.15)
 
     &:not(.btn-lg):not(.btn-sm):not(.btn-smm)
+        border-radius: 2.4px
+        font-size: 14px
         padding-top: 0
         padding-bottom: 0
         height: 40px
@@ -93,3 +103,16 @@ p
     &-tt_up
         font-size: 12px
         text-transform: uppercase
+
+
+/**
+ * Forms
+ */
+.form-row
+    display: flex
+    margin-left: -8px
+    margin-right: -8px
+
+    [class*="col-"]
+        padding-left: 8px
+        padding-right: 8px

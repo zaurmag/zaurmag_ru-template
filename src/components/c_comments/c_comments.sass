@@ -1,0 +1,103 @@
+.c_comments
+    $self: &
+
+    /**
+     * Title
+     */
+    &__title
+        color: $gray-800
+        font-size: 24px
+        font-weight: 400
+        line-height: 1.2
+        margin-bottom: 30px
+
+        &-count
+            color: $red
+            font-weight: 700
+
+        &-postname
+            color: $gray-500
+            font-weight: 500
+
+    /**
+     * Comment
+     */
+    &__comment
+        &-parent
+            display: flex
+
+        &-left
+            margin-right: 30px
+
+        &-avatar
+            border-radius: 50%
+
+        &-meta
+            align-items: flex-end
+            display: flex
+            margin-bottom: 5px
+
+        &-author
+            color: $gray-800
+            font-size: 15px
+            font-weight: 700
+            margin-right: 15px
+
+            a
+                color: $gray-800
+                text-decoration: underline
+
+                &:hover
+                    color: $red
+
+        &-date
+            color: $gray-500
+            font-size: 12px
+
+        &-text
+            p
+                margin: 0
+
+                &:not(:last-child)
+                    margin-bottom: 15px
+
+        &-footer
+            color: $gray-500
+            font-size: 11px
+            margin-top: 5px
+
+        &-reply
+            color: $gray-500
+
+            &:hover
+                color: $red
+                text-decoration: none
+
+        &:not(:last-child)
+            border-bottom: 1px solid $gray-300
+            margin-bottom: 20px
+            padding-bottom: 20px
+
+        &--admin
+            background-color: lighten($red, 52%)
+            padding: 15px
+
+    /**
+     * Children
+     */
+    &__children
+        margin-top: 15px
+        margin-left: 64px
+
+        #{$self}__comment
+            position: relative
+
+        &-icon
+            position: absolute
+            top: 50%
+            left: -45px
+            transform: translateY(-50%)
+
+            .icon
+                fill: $gray-500
+                font-size: 20px
