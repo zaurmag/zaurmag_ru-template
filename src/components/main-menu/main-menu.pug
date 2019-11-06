@@ -5,91 +5,13 @@ nav.main-menu.mb-6
 
         //- Menu list
         ul.main-menu__nav
-            -
-                var menuData = [
-                    {
-                    "dropdown" : false,
-                    "text" : "JavaScript",
-                    "link" : "#",
-                    "icon" : 'js'
-                    },
-                    {
-                    "dropdown" : false,
-                    "text" : "Html5, Css3",
-                    "link" : "category.html",
-                    "icon" : 'html5'
-                    },
-                    {
-                    "dropdown" : false,
-                    "text" : "Joomla",
-                    "link" : "category.html",
-                    "icon" : 'joomla'
-                    },
-                    {
-                    "dropdown" : false,
-                    "text" : "WordPress",
-                    "link" : "category.html",
-                    "icon" : 'wordpress'
-                    },
-                    {
-                    "dropdown" : false,
-                    "text" : "Веб-дизайн",
-                    "link" : "category.html",
-                    "icon" : 'webdesign'
-                    },
-                    {
-                    "dropdown" : false,
-                    "text" : "Seo",
-                    "link" : "category.html",
-                    "icon" : 'search'
-                    },
-                    {
-                    "dropdown" : false,
-                    "text" : "Заработок",
-                    "link" : "category.html",
-                    "icon" : 'dollar'
-                    },
-                    {
-                    "dropdown" : false,
-                    "text" : "Книги",
-                    "link" : "contact.html",
-                    "icon" : 'book'
-                    },
-                    {
-                    "dropdown" : true,
-                    "text" : "Еще",
-                    "link" : "#",
-                    "icon" : 'angle-double-right',
-                    "itemList" : [
-                        {
-                        "text" : "Полезные советы",
-                        "link" : "#"
-                        },
-                        {
-                        "text" : "Программы и сервисы",
-                        "link" : "#"
-                        },
-                        {
-                        "text" : "О жизни",
-                        "link" : "#"
-                        },
-                        {
-                        "text" : "Хостинг",
-                        "link" : "#"
-                        },
-                        {
-                        "text" : "Цели и достижения",
-                        "link" : "#"
-                        },
-                    ]
-                    }
-                ]
-            each item in menuData
+            each item in navData
                 case item.dropdown
                     when true
                         li.parent
                             a(href= item.link)
-                                +icon(item.icon)
+                                if(item.icon)
+                                    +icon(item.icon)
                                 = item.text
 
                             ul.main-menu__nav-child
@@ -100,5 +22,6 @@ nav.main-menu.mb-6
                     default
                         li
                             a(href= item.link)
-                                +icon(item.icon)
+                                if(item.icon)
+                                    +icon(item.icon)
                                 = item.text

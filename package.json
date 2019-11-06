@@ -1,5 +1,5 @@
 {
-  "name": "zaurmag-gulp-project",
+  "name": "zaurmag-blog-template",
   "version": "1.0.0",
   "description": "My gulp project v.4",
   "main": "index.js",
@@ -20,6 +20,7 @@
     "gulp-cheerio": "latest",
     "gulp-concat": "latest",
     "gulp-csso": "latest",
+    "gulp-data": "latest",
     "gulp-load-plugins": "latest",
     "gulp-plumber": "latest",
     "gulp-pug": "latest",
@@ -33,8 +34,8 @@
     "gulp-tinypng": "latest",
     "gulp-uglify": "latest",
     "gulp-watch": "latest",
-    "gulp.spritesmith": "latest",
-    "gulp-zip": "latest"
+    "gulp-zip": "latest",
+    "gulp.spritesmith": "latest"
   },
   "dependencies": {
     "gulp-favicons": "latest",
