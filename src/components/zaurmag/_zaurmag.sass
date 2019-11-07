@@ -1,4 +1,5 @@
 .zaurmag
+    animation: fadeLeft 0.9s ease-in-out
     color: $white
 
     &__title
@@ -17,3 +18,13 @@
         &-quot
             font-size: 18px
             line-height: 1
+
+
+@keyframes fadeLeft
+    from
+        transform: translateX(-100%)
+        opacity: 0
+
+    to
+        transform: translateX(0)
+        opacity: 1
