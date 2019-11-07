@@ -16,6 +16,7 @@ $blue: #2483b9;
 $red: #c24215;
 $orange: #ecb716;
 $teal: #1eb089;
+$green: #60a820;
 
 // Links
 $link-color: $red !default;
@@ -54,3 +55,10 @@ $secondary:     $gray-500 !default;
 
 // Border radius
 $border-radius: 2px !default
+
+// Forms
+$input-border-radius-lg: 3px !default;
+$input-font-size-lg: 15px !default;
+$input-height-lg: 45px !default;
+$input-focus-border-color: $gray-800 !default;
+$input-focus-box-shadow: '' !default;

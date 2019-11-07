@@ -215,33 +215,34 @@ block columns
             section.section.mb-5
                 header.section__title
                     h2.section__title-main Форма
+                    span.section__title-muted С валидацией полей
 
                 .form
-                    .form__header
-                        p.m-0 Текст до формы
+                    form.needs-validation(novalidate)
+                        .form__header
+                            p.m-0 Текст до формы
 
-                    fieldset.form__fields
-                        .form-row
-                            .col-md-6.mb-3
-                                .form__element
-                                    .form__label Ваше имя *
-                                    input.form__input(type="text")
+                        fieldset.form__fields
+                            .form__row
+                                .col-md-6
+                                    .form__group
+                                        .form__label Ваше имя *
+                                        input.form__control(type="text" required)
 
-                            .col-md-6.mb-3
-                                .form__element
-                                    .form__label Ваше email *
-                                    input.form__input(type="email")
+                                .col-md-6
+                                    .form__group
+                                        .form__label Ваше email *
+                                        input.form__control(type="email" required)
 
-                        .form__element.form__element--textarea
-                            textarea.form__input.form__input--textarea(placeholder="Текст сообщения *")
+                            .form__group.form__group--textarea
+                                textarea.form__control.form__control--textarea(placeholder="Текст сообщения *" required)
 
-                    .mt-3
                         button.btn.btn-danger.btn-lg.px-3(type="submit")
-                            span.mr-1 Отправить
+                                span.mr-1 Отправить
 
-                    .form__footer
-                        .textblock.small
-                            p.m-0 Текст после формы
+                        .form__footer
+                            .textblock.small
+                                p.m-0 Текст после формы
 
             // Demo- download
             section.section.mb-5

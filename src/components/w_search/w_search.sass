@@ -1,13 +1,24 @@
 .w_search
-    .form__element
-        border-width: 2px
-        align-items: center
-        display: flex
+    .form
+        &__group
+            position: relative
+            margin: 0
+
+        &__control
+            border-width: 2px
+            padding-right: 40px
 
     &__btn
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        right: 4px
+
         &.btn
             box-shadow: none
-            height: 100% !important
+            padding: 0 10px
+            height: 100%
+            width: 40px
 
             .icon
                 fill: $gray-500

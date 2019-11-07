@@ -96,7 +96,7 @@
               <div class="col-md-4 d-flex align-items-center">
                 <div class="order-block">
                   <div class="order-block__title">У меня вы можете заказать:</div>
-                  <div class="order-block__buttons"><a class="btn btn-danger btn-sm mr-3 px-3" href="#">Верстку шаблона</a><a class="btn btn-success btn-sm px-3" href="#">Сайт под ключ</a></div>
+                  <div class="order-block__buttons"><a class="btn btn-primary btn-sm mr-3 px-3" href="#">Верстку шаблона</a><a class="btn btn-success btn-sm px-3" href="#">Сайт под ключ</a></div>
                 </div>
               </div>
             </div>
@@ -286,10 +286,11 @@
             <aside class="sidebar sidebar__right col-lg-4">
               <!-- Поиск-->
               <div class="widget w_search">
+                <div class="widget__title"><span>Поиск по блогу</span></div>
                 <div class="form">
-                  <form class="w_search__form">
-                    <div class="form__element">
-                      <input class="form__input w_search__input" type="text" placeholder="Поиск по сайту...">
+                  <form class="w_search__form needs-validation" novalidate>
+                    <div class="form__group">
+                      <input class="form__control w_search__control" type="text" placeholder="Мин. длина запроса — 3 симв." pattern=".{3,}" required>
                       <button class="w_search__btn btn" type="submit">
                         <svg class="icon icon-search">
                           <use xlink:href="#search"></use>
@@ -331,24 +332,24 @@
                 <div class="widget__title"><span>Подписка на новости блога</span></div>
                 <p>Подпишитесь на рассылку, чтобы не пропустить новые материалы на блоге.</p>
                 <div class="form">
-                  <form class="form__form">
+                  <form class="needs-validation" novalidate>
                     <fieldset class="form__fields">
-                      <div class="form__element form__element--icon">
+                      <div class="form__group form__group--icon">
                         <label class="form__label">Ваше имя *</label>
-                        <input class="form__input" type="text" name="name" required="required">
+                        <input class="form__control" type="text" name="name" required="required">
                         <svg class="icon icon-user">
                           <use xlink:href="#user"></use>
                         </svg>
                       </div>
-                      <div class="form__element form__element--icon">
+                      <div class="form__group form__group--icon">
                         <label class="form__label">Ваше email *</label>
-                        <input class="form__input" type="email" name="email" required="required">
+                        <input class="form__control" type="email" name="email" required="required">
                         <svg class="icon icon-email">
                           <use xlink:href="#email"></use>
                         </svg>
                       </div>
                     </fieldset>
-                    <button class="mt-3 btn btn-block btn-danger btn-tt_up" type="submit">Подписаться</button>
+                    <button class="btn btn-block btn-danger btn-tt_up" type="submit">Подписаться</button>
                   </form>
                 </div>
               </div>

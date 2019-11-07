@@ -4,47 +4,34 @@
     &__header
         margin-bottom: 15px
 
-    &__element
-        border: 1px solid $gray-500
-        transition: border-color .2s ease
-        position: relative
-        overflow: hidden
-        height: 46px
+    &__row
+        display: flex
+        flex-wrap: wrap
+        margin-left: -8px
+        margin-right: -8px
 
-        &:not(:last-child)
-            margin-bottom: 15px
+        > [class*="col"]
+            padding-left: 8px
+            padding-right: 8px
+
+    &__group
+        position: relative
+        margin-bottom: 16px
 
         &--mw50
             max-width: 50%
 
-        &--textarea
-            height: 150px
-
-            #{$self}__label
-                top: 10px
-                transform: none
-
-        // Focus
-        &--focused
-            border-color: $gray-600
-            transition: border-color .2s ease
-
-            #{$self}__label
-                font-size: 11px
-                top: 8px
-                bottom: auto
-                transition: all 0.2s ease
-
         // Icon
         &--icon
-            padding-right: 30px
+            #{$self}__control
+                padding-right: 35px
 
-        .icon
-            fill: #c9c9c9
-            position: absolute
-            top: 50%
-            transform: translateY(-50%)
-            right: 15px
+            > .icon
+                fill: #c9c9c9
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                right: 15px
 
     // Label
     &__label
@@ -56,10 +43,15 @@
         font-size: 14px
         transform: translateY(-50%)
         transition: all 0.2s ease
+        margin: 0
+
+        &--textarea
+            top: 8px
+            transform: none
 
     // Input
-    &__input
-        border: none
+    &__control
+        border: 1px solid $gray-500
         padding: 5px 15px
         font-size: 14px
         height: 42px
@@ -73,7 +65,24 @@
             outline: none
 
         &--textarea
+            padding-top: 15px
             height: 150px
+
+    // Focus state
+    &__control--focused
+        #{$self}
+            &__control
+                border-color: $gray-800
+                transition: border-color .2s ease
+
+            &__label
+                font-size: 11px
+                top: 8px
+                bottom: auto
+                transition: all 0.2s ease
+
+                &--textarea
+                    top: 4px
 
     // Checkbox
     &__checkbox
@@ -197,3 +206,28 @@
     // Footer
     &__footer
         margin-top: 15px
+
+
+    /**
+     * Validate
+     */
+    .was-validated
+        #{$self}
+            &__control
+                &:invalid
+                    border-color: #e80501
+                    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E") right 10px top 50% /calc(.75em + .375rem) calc(.75em + .375rem) no-repeat
+
+                &--textarea
+                    &:invalid, &:valid
+                        background-position: right 10px top 10px !important
+
+                &:valid
+                    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNTA0LjUwMiw3NS40OTZjLTkuOTk3LTkuOTk4LTI2LjIwNS05Ljk5OC0zNi4yMDQsMEwxNjEuNTk0LDM4Mi4yMDNMNDMuNzAyLDI2NC4zMTFjLTkuOTk3LTkuOTk4LTI2LjIwNS05Ljk5Ny0zNi4yMDQsMCAgICBjLTkuOTk4LDkuOTk3LTkuOTk4LDI2LjIwNSwwLDM2LjIwM2wxMzUuOTk0LDEzNS45OTJjOS45OTQsOS45OTcsMjYuMjE0LDkuOTksMzYuMjA0LDBMNTA0LjUwMiwxMTEuNyAgICBDNTE0LjUsMTAxLjcwMyw1MTQuNDk5LDg1LjQ5NCw1MDQuNTAyLDc1LjQ5NnoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzRBRTUwMSIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+")right 10px top 50% /calc(.75em + .375rem) calc(.75em + .25rem) no-repeat
+                    border-color: #01af11
+
+            // Whith icon
+            &__group--icon
+                #{$self}__control
+                    &:invalid, &:valid
+                        background: none

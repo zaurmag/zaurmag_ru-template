@@ -1,10 +1,13 @@
 aside.sidebar.sidebar__right.col-lg-4
     // Поиск
     .widget.w_search
+        .widget__title
+            span Поиск по блогу
+
         .form
-            form.w_search__form
-                .form__element
-                    input.form__input.w_search__input(type="text", placeholder="Поиск по сайту...")
+            form.w_search__form.needs-validation(novalidate)
+                .form__group
+                    input.form__control.w_search__control(type="text", placeholder="Мин. длина запроса — 3 симв." pattern=".{3,}" required)
 
                     button.w_search__btn.btn(type="submit")
                         +icon('search')
@@ -24,21 +27,21 @@ aside.sidebar.sidebar__right.col-lg-4
             span Подписка на новости блога
         p Подпишитесь на рассылку, чтобы не пропустить новые материалы на блоге.
         .form
-            form.form__form
+            form.needs-validation(novalidate)
                 fieldset.form__fields
-                    .form__element.form__element--icon
+                    .form__group.form__group--icon
                         label.form__label Ваше имя *
-                        input.form__input(type="text" name="name" required="required")
+                        input.form__control(type="text" name="name" required="required")
 
                         +icon('user')
 
-                    .form__element.form__element--icon
+                    .form__group.form__group--icon
                         label.form__label Ваше email *
-                        input.form__input(type="email" name="email" required="required")
+                        input.form__control(type="email" name="email" required="required")
 
                         +icon('email')
 
-                button.mt-3.btn.btn-block.btn-danger.btn-tt_up(type="submit") Подписаться
+                button.btn.btn-block.btn-danger.btn-tt_up(type="submit") Подписаться
 
 
     // Подписка на канал Телеграм

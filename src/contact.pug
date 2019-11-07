@@ -16,25 +16,26 @@ block columns
                         p Для связи со мной воспользуйтесь формой обратной связи ниже. Я обязательно вам отвечу, как будет возможность. Обычно я отвечаю на письма в течении суток.
 
                     .form
-                        .form__header
-                            p.m-0 Поля, отмеченные *, обязательны для заполнения!
+                        form.needs-validation(novalidate)
+                            .form__header
+                                p.m-0 Поля, отмеченные *, обязательны для заполнения!
 
-                        fieldset.form__fields
-                            .form-row
-                                .col-md-6.mb-3
-                                    .form__element
-                                        .form__label Ваше имя *
-                                        input.form__input(type="text")
+                            fieldset.form__fields
+                                .form__row
+                                    .col-md-6
+                                        .form__group
+                                            .form__label Ваше имя *
+                                            input.form__control(type="text" value="" required)
 
-                                .col-md-6.mb-3
-                                    .form__element
-                                        .form__label Ваше email *
-                                        input.form__input(type="email")
+                                    .col-md-6
+                                        .form__group
+                                            .form__label Ваше email *
+                                            input.form__control(type="email" value="" required)
 
-                            .form__element.form__element--textarea
-                                textarea.form__input.form__input--textarea(placeholder="Текст сообщения *")
+                                .form__group
+                                    label.form__label.form__label--textarea Текст сообщения *
+                                    textarea.form__control.form__control--textarea(value="" required)
 
-                        .mt-3
                             button.btn.btn-secondary.px-3(type="submit")
                                 span.mr-1 Отправить
 
