@@ -89,15 +89,12 @@ formInput
         }
     });
 
-$(window).on('load', function(){
-    formInput.each(function(){
-        console.log($(this).val());
-
-        if($(this).val()) {
-            addClassFn($(this));
-        }
-    });
+formInput.each(function(){
+    if($(this).val()) {
+        addClassFn($(this));
+    }
 });
+
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {

@@ -31,7 +31,7 @@ block columns
 
 
             // Tags
-            .tags
+            .tags.mb-3
                 ul.tags__list
                     li.tags__item
                         a.tags__link(href="#") #youtube
@@ -41,6 +41,10 @@ block columns
 
                     li.tags__item
                         a.tags__link(href="#") #видео
+
+            // Vote block
+            .vote-block
+                include ./components/vote-block/vote-block
 
             // Author block
             .author-block.my-6
