@@ -4,6 +4,10 @@ ul.pagination__list.nav
             +icon('long-arrow-left')
 
     - for(var i = 1; i < 8; i++)
+        if(i == 1)
+            li.pagination__item.pagination__item--active
+                a.pagination__link(href="#")= i
+
         if(i == 4)
             li.pagination__item
                 a.pagination__link(href="#") ...

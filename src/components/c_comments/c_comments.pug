@@ -36,19 +36,19 @@
         .form__header
             p.m-0 Ваш e-mail не будет опубликован. Обязательные поля помечены *
         fieldset.form__fields
-            .form-row
-                .col-md-6.mb-3
-                    .form__element
+            .form__row
+                .col-md-6
+                    .form__group
                         .form__label Ваше имя *
-                        input.form__input(type="text")
+                        input.form__control(type="text")
 
-                .col-md-6.mb-3
-                    .form__element
+                .col-md-6
+                    .form__group
                         .form__label Ваше email *
-                        input.form__input(type="email")
+                        input.form__control(type="email")
 
             .form__element.form__element--textarea
-                textarea.form__input.form__input--textarea(placeholder="Текст комментария *")
+                textarea.form__control.form__control--textarea(placeholder="Текст комментария *")
 
         .form__footer
             .textblock.small
