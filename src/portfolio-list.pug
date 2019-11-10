@@ -1,0 +1,33 @@
+extends ./base/page
+
+block variables
+    - var title = 'Контакты'
+    - var pageClass = 'single-page'
+
+block columns
+    main.content__no-cols.col-12
+        section.section.mb-5
+            header.section__title
+                h1.m-0 Мои работы
+
+        .row
+            .col-md-4.mb-6
+                +portfolio('export05_ru/export05_ru', 'Центр координации поддержки экспорта РД', 'Дизайн, верстка, перенос на CMS', 'https://export05.ru')
+
+            .col-md-4.mb-6
+                +portfolio('mancentr_ru/mancentr_ru', 'Официальный диллер Man в г. Перми', 'Верстка, перенос на CMS', 'https://mancentr.ru')
+
+            .col-md-4.mb-6
+                +portfolio('silamagia_rf/silamagia_rf', 'Магический блог "Сила Магия"', 'Дизайн, верстка, перенос на CMS', 'https://силамагия.рф')
+
+            .col-md-4.mb-6
+                +portfolio('goreco_ru/goreco_ru', 'ГорЭко - экологическая компания', 'Верстка, перенос на CMS', 'https://goreco.ru')
+
+            .col-md-4.mb-6
+                +portfolio('itl05_ru/itl05_ru', 'ITL - системы видеонаблюдения', 'Дизайн, верстка, перенос на CMS', 'https://itl05.ru')
+
+            .col-md-4.mb-6
+                +portfolio('seismicdataprocessing_com/seismicdataprocessing_com', 'Обработка и интерпретация сейсмоданных', 'Дизайн, верстка, перенос на CMS', 'https://seismicdataprocessing.com')
+
+        .loadmore.mt-6
+            a.btn.btn-outline-secondary.posts__loadmore-btn.px-4(href="#") Загрузить еще

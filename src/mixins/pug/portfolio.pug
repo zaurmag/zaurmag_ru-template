@@ -1,0 +1,19 @@
+mixin portfolio(image, title, type, link)
+    article.portfolio
+        .portfolio__image
+            a.portfolio__btn.portfolio__btn--extlink(href="/portfolio-single.html")
+                +icon('share-square')
+            picture
+                source(media="(min-width: 1200px)" srcset="../images/portfolio/" + image + "@xl.jpg")
+                img(src="data:image/gif;base64,R0lGODlhAQABAAAAADs=", alt= title, width="360")
+
+            a.portfolio__btn.portfolio__btn--zoom(href="../images/portfolio/" + image + ".jpg")
+                +icon('resize')
+
+        .portfolio__body
+            .portfolio__title
+                a.portfolio__title-link(href="/portfolio-single.html")= title
+                a.portfolio__extlink(href= link target="_blank" title="Открыть сайт онлайн")
+                    +icon('share-square')
+
+            .portfolio__type= type

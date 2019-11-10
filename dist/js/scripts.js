@@ -181,6 +181,18 @@ function overlayRemFn() {
         $('body').removeClass('animate');
     });
 }
+jQuery(document).ready(function($) {
+    // Popup image
+    $('.portfolio__btn--zoom').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        closeBtnInside: true,
+        fixedContentPos: true,
+        removalDelay: 300,
+        mainClass: 'mfp-scale'
+    });
+}); // end ready
+
 
 jQuery(document).ready(function($) {
     $('.slider-courses').owlCarousel({
@@ -364,6 +376,18 @@ jQuery(document).ready(function($) {
     };
 
 }(jQuery));
+
+jQuery(document).ready(function($) {
+    // Popup image
+    $('.popup-image--js').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        closeBtnInside: true,
+        fixedContentPos: true,
+        removalDelay: 300,
+        mainClass: 'mfp-scale'
+    });
+}); // end ready
 
 /*! Magnific Popup - v1.1.0 - 2016-02-20
 * http://dimsemenov.com/plugins/magnific-popup/

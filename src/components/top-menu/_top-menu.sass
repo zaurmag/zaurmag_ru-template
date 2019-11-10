@@ -1,33 +1,42 @@
 .top-menu
     $self: &
 
-    &__list
-        align-items: center
-        display: flex
-        font-size: 13px
-        font-weight: 300
-        height: 50px
+    /**
+     * Mobile
+     */
+    @include media-breakpoint-down(md)
+        &__list
 
-    &__item
-        &:not(:last-child)
-            margin-right: 30px
 
-    &__link
-        color: #e6e6e6
-        text-decoration: none
-        transition: color .1s ease
+    /**
+     * Desktop
+     */
+    @include media-breakpoint-up(lg)
+        &__list
+            align-items: center
+            display: flex
+            font-size: 13px
+            font-weight: 300
+            height: 50px
 
-        &:hover
-            color: $white
+        &__item
+            &:not(:last-child)
+                margin-right: 25px
+
+                @include media-breakpoint-up(xl)
+                    margin-right: 30px
+
+        &__link
+            color: #e6e6e6
             text-decoration: none
             transition: color .1s ease
 
-    &--active
-        #{$self}__link
-            color: $white
-            text-decoration: underline
+            &:hover
+                color: $white
+                text-decoration: none
+                transition: color .1s ease
 
-
-
-
-
+        &--active
+            #{$self}__link
+                color: $white
+                text-decoration: underline

@@ -1,0 +1,73 @@
+extends ./base/page
+
+block variables
+    - var title = 'Мои работы - ГорЭко'
+    - var pageClass = 'single-page'
+
+block columns
+    main.content__no-cols.col-12
+        section.section.mb-5
+            header.section__title
+                .h1.m-0 Мои работы
+
+        article.portfolio-single
+            .row
+                .col-md-5.order-lg-2
+                    .portfolio-single__info
+                        header.portfolio-single__header.mb-6
+                            h1.h3.portfolio-single__title.mb-2 ГорЭко - экологическая компания
+                            .portfolio-single__type
+                                span Корпоративный сайт
+
+                        .extrafields.mb-6
+                            dl.extrafields__row
+                                .row
+                                    dt.extrafields__name.col-5 Дизайн
+                                    dd.extrafields__value.col-7 Нет
+
+                            dl.extrafields__row
+                                .row
+                                    dt.extrafields__name.col-5 Верстка
+                                    dd.extrafields__value.col-7 Да
+
+                            dl.extrafields__row
+                                .row
+                                    dt.extrafields__name.col-5 Перенос и настройка CMS
+                                    dd.extrafields__value.col-7 Да
+
+                            dl.extrafields__row
+                                .row
+                                    dt.extrafields__name.col-5 CMS
+                                    dd.extrafields__value.col-7 Wordpress
+
+                            dl.extrafields__row
+                                .row
+                                    dt.extrafields__name.col-5 Ссылка
+                                    dd.extrafields__value.col-7 <a href="https://goreco.ru" target="_blank">https://goreco.ru</a>
+
+                        // Vote block
+                        .vote-block
+                            include ./components/vote-block/vote-block
+
+                .col-md-7.order-lg-1
+                    .portfolio-single__image
+                        a.zoom.popup-image--js(href="../images/portfolio/goreco_ru/goreco_ru.jpg")
+                            picture
+                                source(media="(min-width: 1200px)" srcset="../images/portfolio/goreco_ru/goreco_ru@lg.jpg")
+                                img.img-fluid(src="data:image/gif;base64,R0lGODlhAQABAAAAADs=", alt="ГорЭко", width="")
+
+            .textblock.mt-6
+                p Задача, которая была поставлена от заказчика — это верстка, посадка и настройка cms. Требование по CMS — Wordpress. Очень времени не сколько на верстку макета, сколько на настройку CMS. Одно из требований было - удобное наполнение сайта контентом из админки сайта, не влезая в код шаблона. А в контент, помимо обычного текста и картинок входит:
+                ul
+                    li добавление на первый экран (занимает всю видимую часть) страницы заставки фото/видео, причем на каждой странице свой заголовок и описание данного экрана;
+                    li загрузка картинок для небольшой галереи страниц услуг;
+                    li расчет стоимости (калькулятор) - для каждой услуги задаются свои параметры;
+                    li вывод избранных услуг на главную страницу сайта.
+
+                p Также одна из задач - выводить номер телефона в шапке сайта в зависимости от местополжения посетителя: если из Москвы - показываем московский номер; если из Питера - показываем питерский номер; если из рес. Крым - показываем крымский номер; если из любого другого региона - показываем питерский номер.
+
+                p Небольшая сложность была с показом главного меню сайта в шапке. На каких то страница есть фоновая заставка на экране, на каких то ее нет. Исходя из этого, меняется вид меню.
+
+                p В целом проект сдан. Заказчик остался доволен.
+
+

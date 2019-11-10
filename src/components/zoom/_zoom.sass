@@ -1,0 +1,39 @@
+.zoom
+    display: block
+    position: relative
+
+    &::before
+        background: $red url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDQzOC41MjkgNDM4LjUyOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDM4LjUyOSA0MzguNTI5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTgwLjE1NiwyMjUuODI4Yy0xLjkwMy0xLjkwMi00LjA5My0yLjg1NC02LjU2Ny0yLjg1NGMtMi40NzUsMC00LjY2NSwwLjk1MS02LjU2NywyLjg1NGwtOTQuNzg3LDk0Ljc4N2wtNDEuMTEyLTQxLjExNyAgICBjLTMuNjE3LTMuNjEtNy44OTUtNS40MjEtMTIuODQ3LTUuNDIxYy00Ljk1MiwwLTkuMjM1LDEuODExLTEyLjg1MSw1LjQyMWMtMy42MTcsMy42MjEtNS40MjQsNy45MDUtNS40MjQsMTIuODU0djEyNy45MDcgICAgYzAsNC45NDgsMS44MDcsOS4yMjksNS40MjQsMTIuODQ3YzMuNjE5LDMuNjEzLDcuOTAyLDUuNDI0LDEyLjg1MSw1LjQyNGgxMjcuOTA2YzQuOTQ5LDAsOS4yMy0xLjgxMSwxMi44NDctNS40MjQgICAgYzMuNjE1LTMuNjE3LDUuNDI0LTcuODk4LDUuNDI0LTEyLjg0N3MtMS44MDktOS4yMzMtNS40MjQtMTIuODU0bC00MS4xMTItNDEuMTA0bDk0Ljc4Ny05NC43OTMgICAgYzEuOTAyLTEuOTAzLDIuODUzLTQuMDg2LDIuODUzLTYuNTY0YzAtMi40NzgtMC45NTMtNC42Ni0yLjg1My02LjU3TDE4MC4xNTYsMjI1LjgyOHoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCQk8cGF0aCBkPSJNNDMzLjExLDUuNDI0QzQyOS40OTYsMS44MDcsNDI1LjIxMiwwLDQyMC4yNjMsMEgyOTIuMzU2Yy00Ljk0OCwwLTkuMjI3LDEuODA3LTEyLjg0Nyw1LjQyNCAgICBjLTMuNjE0LDMuNjE1LTUuNDIxLDcuODk4LTUuNDIxLDEyLjg0N3MxLjgwNyw5LjIzMyw1LjQyMSwxMi44NDdsNDEuMTA2LDQxLjExMmwtOTQuNzg2LDk0Ljc4NyAgICBjLTEuOTAxLDEuOTA2LTIuODU0LDQuMDkzLTIuODU0LDYuNTY3czAuOTUzLDQuNjY1LDIuODU0LDYuNTY3bDMyLjU1MiwzMi41NDhjMS45MDIsMS45MDMsNC4wODYsMi44NTMsNi41NjMsMi44NTMgICAgczQuNjYxLTAuOTUsNi41NjMtMi44NTNsOTQuNzk0LTk0Ljc4N2w0MS4xMDQsNDEuMTA5YzMuNjIsMy42MTYsNy45MDUsNS40MjgsMTIuODU0LDUuNDI4czkuMjI5LTEuODEyLDEyLjg0Ny01LjQyOCAgICBjMy42MTQtMy42MTQsNS40MjEtNy44OTgsNS40MjEtMTIuODQ3VjE4LjI2OEM0MzguNTMsMTMuMzE1LDQzNi43MzQsOS4wNCw0MzMuMTEsNS40MjR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==") 50% 50% /calc(.75em + .375rem) calc(.75em + .25rem) no-repeat
+        border-radius: 50%
+        content: ""
+        @include pos-center
+        opacity: 0
+        transition: opacity .2s ease
+        display: block
+        height: 48px
+        width: 48px
+        z-index: 1
+
+    &::after
+        background-color: rgba($black, .4)
+        content: ""
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        opacity: 0
+        transition: opacity .2s ease
+        z-index: 0
+
+    &:hover
+        &::before
+            transition: opacity .2s ease
+            opacity: 0.9
+
+        &::after
+            transition: opacity .2s ease
+            opacity: 1
+
+
+

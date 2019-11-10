@@ -1,0 +1,104 @@
+.portfolio
+    $self: &
+
+    &__image
+        position: relative
+        margin-bottom: 15px
+
+        &::before
+            background-color: rgba($black, 0.3)
+            content: ""
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            opacity: 0
+            transform: opacity 0.2s ease
+            z-index: 1
+
+    &__btn
+        align-items: center
+        background-color: $gray-800
+        border-radius: 50%
+        color: $white
+        display: flex
+        text-decoration: none
+        justify-content: center
+        font-size: 14px
+        position: absolute
+        top: 50%
+        opacity: 0
+        transition: opacity .2s ease
+        transform: translateY(-50%)
+        height: 48px
+        width: 48px
+        z-index: 2
+
+        &:hover
+            color: $white
+            text-decoration: none
+
+        // Ext link
+        &--extlink
+            background-color: $black
+            left: 50%
+            margin-left: 5px
+
+        // Zoom link
+        &--zoom
+            background-color: $red
+            right: 50%
+            margin-right: 5px
+
+    // Body
+    &__body
+        border-bottom: 1px solid $gray-300
+        padding-bottom: 10px
+
+    // Title
+    &__title
+        color: $gray-800
+        display: flex
+        font-size: 15px
+        font-weight: 700
+        justify-content: space-between
+        margin-bottom: 7px
+
+        &-link
+            color: $gray-800
+
+            &:hover
+                color: $red
+
+    &__extlink
+        color: $gray-600
+
+        &:hover
+            color: $red
+
+    // Type
+    &__type
+        color: $gray-600
+        font-size: 13px
+
+    // Hover state
+    &:hover
+        #{$self}
+            &__image
+                &::before
+                    opacity: 1
+                    transform: opacity 0.2s ease
+
+            &__btn
+                opacity: 0.7
+                transition: opacity .2s ease
+
+                &:hover
+                    opacity: 1
+
+            &__body
+                border-bottom-color: $red
+
+            &__title
+                color: $gray-900
