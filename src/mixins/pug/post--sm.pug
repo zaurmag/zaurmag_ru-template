@@ -2,7 +2,7 @@ mixin sm_post(title, image, date, views, category, comments)
     if(image || comments)
         .post__left
             a.post__left-link(href="#")
-                img.img-fluid(src="../images/post/post--sm/"+ image +".jpg", alt= title, width="")
+                img.img-fluid(src="./images/post/post--sm/"+ image +".jpg", alt= title, width="")
             .post__comments= comments
 
     if(title)

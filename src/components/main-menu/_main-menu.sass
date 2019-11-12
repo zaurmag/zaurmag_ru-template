@@ -2,137 +2,41 @@
     $self: &
     background-color: $red
 
+    > .container
+        position: relative
+        height: 55px
+
+        @include media-breakpoint-up(lg)
+            height: 60px
+        @include media-breakpoint-up(xl)
+            height: 80px
+
     /**
      * Mobile
      */
     @include media-breakpoint-down(md)
-        // Root Container
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        z-index: 101
+
         > .container
-            &.show
-                background-color: #dee4e9
+            align-items: center
+            display: flex
+            justify-content: space-between
 
-        // Select lang
-        &__select-lang
-            margin-bottom: 10px
-
-            .switch-lang
-                height: 50px
-                width: 100%
-
-        // Title
-        &__title
-            color: $blue
-            text-transform: uppercase
-            font-size: 16px
-            font-weight: 500
-            line-height: 1.25
-            margin-bottom: 10px
-            order: 2
-
-        // Contact block
-        &__contact-block
-            padding-left: 10px
-            padding-right: 10px
-
-            .contact-block__row
-                .icon
-                    font-size: 16px
-
-                @media (max-width: 360px)
-                    font-size: 12px
-
-        // Menu wrapper
-        &__wrap
-            background-color: #dee4e9
-            opacity: 0
-            visibility: hidden
-            margin-top: 20px
-            position: absolute
-            top: 56px
-            left: 0
-            right: 0
-            padding: 15px
-            transition: all .2s ease
-            z-index: 10
-
-            .show &
-                visibility: visible
-                opacity: 1
-                margin-top: 0
-                transition: all .2s ease
-
-            @include media-breakpoint-down(md)
-                flex-direction: column
-
-        &__nav
-            font-size: 14px
-            font-weight: 500
-            line-height: 1.43
-            text-transform: uppercase
-            margin: 0
-            order: 3
-
-            > li
-                > a
-                    border-top: 2px solid $white
-                    display: block
-                    padding: 10px
-
-                    &:hover
-                        text-decoration: none
-
-                // Parent
-                &.parent, &.menu-item-has-children
-                    > a
-                        align-items: center
-                        display: flex
-                        position: relative
-                        justify-content: space-between
-
-                        &::after
-                            border-top: 5px solid $blue
-                            border-left: 4px solid transparent
-                            border-right: 4px solid transparent
-                            content: ""
-                            height: 0
-                            width: 0
-
-                        &:hover
-                            &::after
-                                border-top-color: $red
-
-
-            // Child items
-            &-child, .sub-menu
-                text-transform: none
-                margin-left: 20px
-                padding-top: 5px
-                padding-bottom: 15px
-                font-weight: 400
-
-                li
-                    &:not(:last-child)
-                        margin-bottom: 10px
-
-                    a
-                        &:hover
-                            text-decoration: none
 
     /**
      * Desktop
      */
     @include media-breakpoint-up(lg)
-        > .container
-            position: relative
-            height: 60px
-            @include media-breakpoint-up(xl)
-                height: 80px
-
         &__nav
             align-items: center
             display: flex
             font-size: 16px
             font-weight: 400
+            flex-wrap: wrap
             margin: 0
             padding: 0
             height: 60px
@@ -159,6 +63,12 @@
                 display: flex
                 position: relative
                 height: 100%
+
+                &:not(:last-child)
+                    margin-right: 35px
+
+                    @include media-breakpoint-up(xl)
+                        margin-right: 40px
 
                 > a
                     align-items: center
@@ -187,12 +97,7 @@
                             width: 100%
 
                 // Parent
-                &.parent, &.menu-item-has-children
-                    &:last-child
-                        #{$self}__nav-child, .sub-menu
-                            left: auto
-                            right: 0
-
+                &.parent, &.menu-item-has-children, &.flexMenu-viewMore
                     a
                         &::before
                             border-top: 5px solid $white
@@ -205,7 +110,7 @@
                             transform: translateY(-50%)
                             right: -13px
 
-                    &:hover
+                    &:hover, &.active
                         > a
                             color: $white
 
@@ -216,12 +121,6 @@
                             transition: all .2s ease
 
 
-                &:not(:last-child)
-                    margin-right: 30px
-
-                    @include media-breakpoint-up(xl)
-                        margin-right: 40px
-
             // Second level
             &-child, .sub-menu
                 background-color: #f1f1f1
@@ -230,9 +129,7 @@
                 text-transform: none
                 font-size: 14px
                 font-weight: 400
-                position: absolute
-                top: 80px
-                left: 0
+                right: -14px
                 min-width: 200px
                 padding-top: 10px
                 padding-bottom: 10px
@@ -240,7 +137,24 @@
                 visibility: hidden
                 margin-top: 20px
                 transition: all .2s ease
+                list-style: none
                 z-index: 10
+
+                @include media-breakpoint-up(lg)
+                    top: 60px
+                @include media-breakpoint-up(xl)
+                    top: 80px
+
+                &::before
+                    border-bottom: 10px solid $red
+                    border-left: 12px solid transparent
+                    border-right: 12px solid transparent
+                    content: ""
+                    position: absolute
+                    top: -10px
+                    right: 20px
+                    height: 0
+                    width: 0
 
                 li
                     &:not(:last-child)

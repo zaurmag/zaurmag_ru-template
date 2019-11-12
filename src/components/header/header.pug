@@ -1,16 +1,15 @@
-header.header
+header.header#header.d-lg-flex.d-none
     .top-bar
         include ../top-bar/top-bar
 
     .container
-        .row
+        .row.no-gutters
             .col-md-4.d-flex.align-items-center
                 include ../zaurmag/zaurmag
 
             .col-md-4
                 .zm
-                    img.zm__image(src="../images/zm/zaur-magomedov.png", alt="Заур Магомедов", width="211")
+                    img.zm__image(src="./images/zm/zaur-magomedov.png", alt="Заур Магомедов", width="211")
 
             .col-md-4.d-flex.align-items-center
                 include ../order-block/order-block
-

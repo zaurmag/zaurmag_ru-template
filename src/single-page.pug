@@ -9,8 +9,9 @@ block columns
         article.single-page.post
             .post__image.single-post__image
                 picture
-                    source(media="(min-width: 1200px)" srcset="../images/posts/lazy-load-youtube-video.jpg")
-                    img(src="data:image/gif;base64,R0lGODlhAQABAAAAADs=", alt= title, width="750")
+                    //source(media="(min-width: 1200px)" srcset="../images/posts/lazy-load-youtube-video.jpg")
+                    source(srcset="../images/posts/lazy-load-youtube-video.jpg")
+                    img.img-fluid(src="data:image/gif;base64,R0lGODlhAQABAAAAADs=", alt= title, width="750")
 
             header.post__header
                 h1.single-post__title Отложенная загрузка видео Ютуб на сайте
@@ -63,14 +64,14 @@ block columns
 
             // Single page nav
             .single-page__navigation.row.no-gutters
-                .col-sm-6.single-page__nav.single-page--prev
+                .col-md-6.single-page__nav.single-page--prev.mb-2.mb-md-0
                     a.single-page__link(href="#")
                         span.single-page__link-icon
                             +icon('long-arrow-left')
 
                         span.single-page__link-tlt Обзор видеокамеры Panasonic V770 + штатив и петлица
 
-                .col-sm-6.single-page__nav.single-page--next
+                .col-md-6.single-page__nav.single-page--next
                     a.single-page__link(href="#")
                         span.single-page__link-tlt Отзыв о книге «Атлант расправил плечи» + 3 небольшие книги для прочтения
 
@@ -79,7 +80,7 @@ block columns
 
 
             // ===== Comments ================
-            .c_comments.mt-5
+            .c_comments.mt-6
                 include ./components/c_comments/c_comments
 
     //- Include sidebar

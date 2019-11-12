@@ -1,5 +1,8 @@
-nav.main-menu.mb-6
+nav.main-menu.mb-lg-6
     .container
+        //- Hamburger
+        include ../hamburger/hamburger
+
         //- Menu list
         ul.main-menu__nav.nav
             each item in navData
@@ -22,3 +25,10 @@ nav.main-menu.mb-6
                                 if(item.icon)
                                     +icon(item.icon)
                                 = item.text
+
+        //- Mobile search
+        .search-mobile.d-lg-none
+            a.search-mobile__toggle(href="#" data-toggle="dropdown" data-display="static")
+                    +icon('search-alt-2')
+
+            include ../w_search-mobile/search-mobile

@@ -1,8 +1,10 @@
-/** ========== Go top ========== **/
+/**
+ * Go top
+ */
 .go-top
     align-items: center
+    bottom: 15px
     background-color: $gray-800
-    bottom: 30px
     border-radius: 2px
     color: $white
     display: flex
@@ -17,12 +19,11 @@
     width: 45px
     z-index: 100
     @include media-breakpoint-up(lg)
+        bottom: 30px
         right: 30px
 
-        &:hover
-            background-color: $red
-            transition: opacity .3s ease
-            opacity: 1
-
-    .icon
-        fill: $white
+    &:hover
+        background-color: $red
+        color: $white
+        transition: opacity .3s ease
+        opacity: 1

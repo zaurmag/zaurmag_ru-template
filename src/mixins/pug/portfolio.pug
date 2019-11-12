@@ -4,8 +4,9 @@ mixin portfolio(image, title, type, link)
             a.portfolio__btn.portfolio__btn--extlink(href="/portfolio-single.html")
                 +icon('share-square')
             picture
-                source(media="(min-width: 1200px)" srcset="../images/portfolio/" + image + "@xl.jpg")
-                img(src="data:image/gif;base64,R0lGODlhAQABAAAAADs=", alt= title, width="360")
+                //source(media="(min-width: 1200px)" srcset="../images/portfolio/" + image + "@xl.jpg")
+                source(srcset="../images/portfolio/" + image + "@xl.jpg")
+                img.img-fluid(src="data:image/gif;base64,R0lGODlhAQABAAAAADs=", alt= title, width="360")
 
             a.portfolio__btn.portfolio__btn--zoom(href="../images/portfolio/" + image + ".jpg")
                 +icon('resize')

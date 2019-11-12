@@ -2,7 +2,9 @@
     $self: &
 
     display: flex
-    justify-content: flex-end
+
+    @include media-breakpoint-up(lg)
+        justify-content: flex-end
 
     &__list
         align-items: center

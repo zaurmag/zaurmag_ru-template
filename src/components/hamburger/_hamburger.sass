@@ -7,54 +7,58 @@
 
     @include media-breakpoint-down(md)
         background-color: transparent
-        border: 2px solid $red
         border-radius: 2px
-        align-items: center
-        display: flex
-        flex-direction: column
+        align-items: flex-start
         position: relative
         outline: none
         transition: transform .2s ease
         justify-content: space-between
         min-width: 40px
-        padding: 10px 10px
-        height: 40px
-        width: 40px
+        height: 25px
+        width: 35px
         z-index: 10
-
-        &:hover
-            background-color: $red
-
-            &::before,
-            &::after,
-            > span
-                background-color: $white
 
         &::before,
         &::after,
         > span
-            background-color: $red
+            background-color: $white
             border-radius: 3px
             content: ""
             display: block
             transition: transform .2s ease
+            position: absolute
             height: 2px
             width: 100%
 
-        .show &
-            transition: transform .3s ease
+        span
+            width: 70%
+            top: 50%
+            transform: translateY(-50%)
 
+        &::before
+            top: 0
+
+        &::after
+            bottom: 0
+            width: 50%
+
+        &--show
             &::before, &::after, > span
                 width: 60%
 
             span
-                left: -50px
+                transform: translateX(-100%)
                 opacity: 0
+                transition: all .3s ease
 
-            &::before, &::after
+            &::before,
+            &::after
                 top: 50%
                 position: absolute
+                transition: all .3s ease .2s
+
             &::after
                 transform: rotate(-45deg)
+
             &::before
                 transform: rotate(45deg)

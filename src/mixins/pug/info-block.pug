@@ -1,8 +1,8 @@
 mixin infoBlock(author, date, views, category, comments)
     if(author)
-        span.info-block__item(itemprop="author" itemscope="" itemtype="http://schema.org/Person")
+        span.info-block__item.d-xl-inline.d-none(itemprop="author" itemscope="" itemtype="http://schema.org/Person")
             span.info-block__author(itemprop="name")
-                img.info-block__author-img.img-fluid.mr-2(src="../images/info-block/zaur-mag.jpg", alt="Заур Магомедов", width="")
+                img.info-block__author-img.img-fluid.mr-2(src="./images/info-block/zaur-mag.jpg", alt="Заур Магомедов", width="")
                 span Заур Магомедов
 
     if(date)
@@ -25,9 +25,9 @@ mixin infoBlock(author, date, views, category, comments)
         span.info-block__item
             +icon('comments')
 
-            a.mr-1.text-danger(href="#")
+            a.text-danger(href="#")
                 if(comments === 0)
-                    | Комментариев нет
+                    | 0
 
                 else
                     = comments

@@ -24,7 +24,12 @@ $link-hover-color:                        darken($link-color, 15%) !default;
 $link-hover-decoration:                   underline !default;
 
 // Grid containers
-$container-max-widths: (xl: 1170px) !default;
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1170px
+) !default;
 
 // Spacing
 $spacer: 1rem !default;

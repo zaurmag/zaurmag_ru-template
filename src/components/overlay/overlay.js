@@ -1,5 +1,6 @@
 function overlayAddFn() {
     var overlay = document.createElement('div');
+
     overlay.classList.add('overlay');
     setTimeout(function() {
         document.body.classList.add('animate');
