@@ -14,7 +14,7 @@ module.exports = function () {
                 }));
 
         spriteData.img.pipe($.gulp.dest(path.path.build.img)); // путь, куда сохраняем картинку
-        spriteData.css.pipe($.gulp.dest('src/mixins/sass/')); // путь, куда сохраняем стили
+        spriteData.css.pipe($.gulp.dest('./src/mixins/sass/')); // путь, куда сохраняем стили
         done();
     });
 };

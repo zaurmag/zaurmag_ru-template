@@ -27,6 +27,37 @@ formInput.each(function(){
     }
 });
 
+/* Init forms
+   ========================================================================= */
+jQuery(document).ready(function($) {
+    /**
+     * Feedback
+     */
+    $('#feedbackForm').simpleSendForm({
+        mailUrl: "/wp-content/themes/zaurmag/form-submit/submit.php",
+        successTitle: "Спасибо за ваше обращение!",
+        successText: "Я обязательно отвечу на ваше письмо в самое ближайшее время."
+    });
+
+    /**
+     * Order verstka
+     */
+    $('#orderVerstka').simpleSendForm({
+        mailUrl: "/wp-content/themes/zaurmag/form-submit/submit.php",
+        successTitle: "Спасибо за ваше обращение!",
+        successText: "Я обязательно отвечу на вашу заявку не более суток."
+    });
+
+    /**
+     * Order site
+     */
+    $('#orderSite').simpleSendForm({
+        mailUrl: "/wp-content/themes/zaurmag/form-submit/submit.php",
+        successTitle: "Спасибо за ваше обращение!",
+        successText: "Я обязательно отвечу на вашу заявку не более суток.",
+        debug: true
+    });
+}); // end ready
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {

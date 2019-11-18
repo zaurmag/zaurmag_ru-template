@@ -26,6 +26,9 @@
             display: flex
             justify-content: space-between
 
+        &__nav
+            display: none
+
 
     /**
      * Desktop
@@ -130,9 +133,10 @@
                 font-size: 14px
                 font-weight: 400
                 right: -14px
-                min-width: 200px
+                min-width: 240px
                 padding-top: 10px
                 padding-bottom: 10px
+                position: absolute
                 opacity: 0
                 visibility: hidden
                 margin-top: 20px
@@ -171,3 +175,6 @@
                             background-color: #e8e8e8
                             text-decoration: none
                             transition: background-color .2s ease
+
+                        .icon
+                            margin-right: 8px

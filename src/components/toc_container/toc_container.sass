@@ -1,0 +1,67 @@
+/* TOC Navigation
+
+#toc_container
+    background-color: $gray-100
+    border: 1px solid $gray-300
+    border-top-width: 2px
+    border-bottom-width: 2px
+    border-top-color: $gray-500
+    border-bottom-color: $gray-500
+    padding: 30px
+    margin: 30px 0
+    width: 100%
+
+    &.contracted
+        display: block !important
+        width: 100%
+
+    .toc_title
+        font-size: 18px
+        font-weight: 700
+        margin: 0
+
+    .toc_toggle
+        font-size: 16px
+        font-weight: 400
+
+        a
+            margin: 0 3px
+
+    ul
+        list-style: none
+        font-size: 14px
+
+    ul.toc_list
+        margin-left: 0
+        margin-bottom: 0
+
+        li
+            &:not(:last-child)
+                border-bottom: 1px dotted $gray-600
+                padding-bottom: 8px
+                margin-bottom: 8px
+
+            a
+                color: $gray-800
+
+                &:hover
+                    color: $red
+                    text-decoration: none
+
+        ul
+            line-height: 1.5
+            margin: 10px 0 10px 25px
+
+            li
+                a
+                    color: $gray-800
+                    text-decoration: none
+
+                    &:hover
+                        color: $red
+                        text-decoration: none
+
+
+    .toc_number
+        font-weight: bold
+        margin-right: 8px

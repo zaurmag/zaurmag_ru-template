@@ -4,6 +4,11 @@
     &__header
         margin-bottom: 15px
 
+    &__title
+        font-size: 20px
+        font-weight: 500
+        margin-bottom: 12px
+
     &__row
         display: flex
         flex-wrap: wrap
@@ -44,6 +49,7 @@
         top: 50%
         pointer-events: none
         font-size: 14px
+        line-height: 1.2
         transform: translateY(-50%)
         transition: all 0.2s ease
         margin: 0
@@ -134,7 +140,7 @@
                 &::before
                     background-color: $gray-500
 
-        &-input
+        input[type="checkbox"]
             display: none
 
             &:checked

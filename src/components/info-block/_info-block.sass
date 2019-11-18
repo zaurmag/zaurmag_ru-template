@@ -1,9 +1,19 @@
 .info-block
-    align-items: center
     color: #a4a4a4
+    align-items: center
     display: flex
     flex-wrap: wrap
     font-size: 13px
+
+    .post__header &
+        margin-right: -52px
+
+        @include media-breakpoint-up(sm)
+            margin-right: -60px
+
+    &__toggle
+        color: $gray-800
+        font-size: 14px
 
     &__item
         align-items: center
@@ -21,9 +31,12 @@
         display: flex
         color: #56355f
 
-        &-img
+        &-img, .avatar
             display: block
             border-radius: 50%
+            max-width: 100%
+            height: auto
+            margin-right: 10px
             width: 30px
 
         span

@@ -11,20 +11,20 @@
         display: flex
         font-size: 12px
 
-    &__item
+    &__item, .menu-item
         &:not(:last-child)
             margin-right: 15px
 
-            #{$self}__link
+            #{$self}__link, a, span
                 &::after
                     content: "/"
                     margin-left: 15px
 
-    &--active
-        #{$self}__link
+    &--active, .current-menu-item
+        #{$self}__link, span
             color: #bababa
 
-    &__link
+    &__link, a
         align-items: center
         color: #808080
         display: flex

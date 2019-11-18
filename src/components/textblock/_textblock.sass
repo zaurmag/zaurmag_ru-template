@@ -26,18 +26,24 @@
         &:not(:last-child)
             margin-bottom: 18px
 
+    // Blockquote
     blockquote
         background-color: $gray-100
         border: 1px solid $gray-200
         font: italic 700 20px/1.4 "Times New Roman", sans-serif
-        padding: 15px 20px 15px 70px
+        padding: 20px 20px 20px 70px
         position: relative
+        margin: 30px 0
+
+        p
+            font: italic 700 18px/1.4 "Times New Roman", sans-serif
+            margin: 0
 
         &::before
             @include sprite($blockquote)
             content: ""
             position: absolute
-            top: 22px
+            top: 25px
             left: 20px
 
         span
@@ -56,3 +62,8 @@
             font-size: 13px
             margin-top: 15px
             margin-bottom: 15px
+
+    // Alerts
+    .alert
+        font-size: 16px
+        line-height: 1.6

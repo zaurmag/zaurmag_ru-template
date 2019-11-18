@@ -2,34 +2,11 @@
     $self: &
 
     background-color: $gray-800
-    border-radius: 2px
+    border-radius: 3px
     overflow: hidden
-    height: 68px
-
-    // Telegram
-    &--telegram
-        background-color: #1197d6
-
-        #{$self}
-            &__icon
-                background-color: darken(#1197d6, 10%)
-
-            &__link
-                &:hover
-                    background-color: darken(#1197d6, 10%)
-
-    // Youtube
-    &--youtube
-        background-color: #cc181e
-
-        #{$self}
-            &__icon
-                background-color: darken(#cc181e, 10%)
-
-            &__link
-                &:hover
-                    #{$self}__right
-                        background-color: darken(#cc181e, 10%)
+    height: 45px
+    @include media-breakpoint-up(smm)
+        height: 68px
 
     &__link
         color: $white
@@ -52,8 +29,12 @@
         background-color: darken($gray-800, 10%)
         display: flex
         justify-content: center
-        min-width: 68px
-        width: 68px
+        min-width: 45px
+        width: 45px
+
+        @include media-breakpoint-up(smm)
+            min-width: 68px
+            width: 68px
 
         #{$self}__link
             align-items: center
@@ -64,7 +45,10 @@
 
         .icon
             fill: $white
-            font-size: 30px
+            font-size: 24px
+
+            @include media-breakpoint-up(smm)
+                font-size: 30px
 
     // Right
     &__right
@@ -87,3 +71,29 @@
         color: $white
         font-size: 11px
 
+
+    // Telegram
+    &--telegram
+        background-color: #1197d6
+
+        #{$self}
+            &__icon
+                background-color: darken(#1197d6, 10%)
+
+            &__link
+                &:hover
+                    #{$self}__right
+                        background-color: darken(#1197d6, 10%)
+
+    // Youtube
+    &--youtube
+        background-color: #cc181e
+
+        #{$self}
+            &__icon
+                background-color: darken(#cc181e, 10%)
+
+            &__link
+                &:hover
+                    #{$self}__right
+                        background-color: darken(#cc181e, 10%)

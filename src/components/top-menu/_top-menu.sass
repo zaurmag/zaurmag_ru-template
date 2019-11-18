@@ -19,14 +19,14 @@
             font-weight: 300
             height: 50px
 
-        &__item
+        .menu-item, &__item
             &:not(:last-child)
                 margin-right: 25px
 
                 @include media-breakpoint-up(xl)
                     margin-right: 30px
 
-        &__link
+        .menu-item > a, .menu-item > span, &__link
             color: #e6e6e6
             text-decoration: none
             transition: color .1s ease
@@ -36,7 +36,7 @@
                 text-decoration: none
                 transition: color .1s ease
 
-        &--active
-            #{$self}__link
+        .current-menu-item, &--active
+            > span
+                border-bottom: 1px dotted $white
                 color: $white
-                text-decoration: underline

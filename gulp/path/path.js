@@ -1,19 +1,20 @@
-var cmsPath = 'W:/domains/farmer-online/templates/template_zm_it/';
+var cmsPath = 'W:/domains/zaurmag/wp-content/themes/zaurmag/';
 module.exports = {
     path: {
         build: { // Build files
             html: 'dist/',
-            style: 'dist/css',
-            img: 'dist/images',
-            imgFavicons: 'dist/images/favicons',
-            js: 'dist/js',
-            fonts: 'dist/fonts',
+            //style: 'dist/css',
+            //img: 'dist/images',
+            //imgFavicons: 'dist/images/favicons',
+            //js: 'dist/js',
+            //fonts: 'dist/fonts',
             zip: 'zip',
             //Replace in cms template
-            // style: cmsPath + '/css',
-            // img: cmsPath + '/images',
-            // js: cmsPath + '/js',
-            // fonts: cmsPath + '/fonts'
+            style: cmsPath + '/css',
+            img: cmsPath + '/images',
+            imgFavicons: cmsPath + '/images/favicons',
+            js: cmsPath + '/js',
+            fonts: cmsPath + '/fonts'
         },
         src: { // Source files
             pug: 'src/*.pug',

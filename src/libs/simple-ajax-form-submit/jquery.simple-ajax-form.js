@@ -36,8 +36,11 @@
             if(options.captcha) {
                 captcha.append('<div class="g-recaptcha" data-sitekey="' + options.captchaPublicKey + '"></div>')
             }
+            $this.submit(function() {
+                if ($this[0].checkValidity() === false) {
+                    return false;
+                }
 
-            $(this).submit(function() {
                 var data = $(this).serialize();
                 function errorRes(errorMessage) {
                     btn.removeClass('progress-bar-animated progress-bar-striped bg-success');
@@ -59,6 +62,8 @@
                             if(options.captcha) {
                                 grecaptcha.reset();
                             }
+                            $this.removeClass('was-validated');
+                            $this.find('.form__group').removeClass('form__control--focused');
                             $this.find('.form__hide-success').slideUp().delay(5000).slideDown();
                             btn.removeClass('progress-bar-animated progress-bar-striped bg-success');
                             $this.find('.form__hide-success').after('<div class="form__sys-message alert alert-success text-center mb-0"></div>');
