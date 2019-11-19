@@ -26,14 +26,11 @@
      * Comment
      */
     &__comment
-        &-parent
-            display: flex
-
-        &-left
-            margin-right: 15px
 
         &-avatar, .avatar
             border-radius: 50%
+            height: auto
+            max-width: 100%
 
         &-meta
             align-items: flex-end
@@ -116,16 +113,16 @@
             #{$self}
                 &__comment
                     &-left
-                        margin-right: 0
-                        margin-bottom: 7px
 
     /**
      * Children
      */
     &__children, .children
         margin-top: 15px
-        margin-left: 64px
         list-style: none
+
+        @include media-breakpoint-up(sm)
+            margin-left: 45px
 
         #{$self}__comment
             position: relative
@@ -152,3 +149,20 @@
 
             .page-numbers
                 @extend .pagination__link
+
+    /**
+     * Ulogin
+     */
+    .ulogin_block
+        align-items: center
+        display: flex
+        flex-wrap: wrap
+        margin-bottom: 20px
+
+        .ulogin_label
+            margin-right: 0
+            margin-bottom: 10px
+
+            @include media-breakpoint-up(sm)
+                margin-bottom: 7px
+                margin-right: 10px

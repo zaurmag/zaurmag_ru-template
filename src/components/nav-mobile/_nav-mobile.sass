@@ -40,7 +40,7 @@
                 &:not(:last-child)
                     border-bottom: 1px solid $gray-300
 
-                a
+                a, span
                     align-items: center
                     display: flex
                     color: $gray-800
@@ -54,5 +54,9 @@
                         font-size: 15px
 
                 &:hover
+                    border-left-color: $red
+                    background-color: $gray-100
+
+                &.current-menu-item
                     border-left-color: $red
                     background-color: $gray-100
