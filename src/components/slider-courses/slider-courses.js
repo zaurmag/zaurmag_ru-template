@@ -1,10 +1,11 @@
 jQuery(document).ready(function($) {
     $('.slider-courses').owlCarousel({
         autoplay: true,
-        loop: false,
+        loop: true,
         margin: 0,
         nav: true,
         dots: true,
+        lazyLoad: true,
         autoHeight: false,
         autoHeightClass: 'owl-height',
         navText: ['<svg class="icon icon-angle-left"><use xlink:href="#angle-left"></use></svg>', '<svg class="icon icon-angle-right"><use xlink:href="#angle-right"></use></svg>'],

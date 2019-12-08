@@ -11,7 +11,11 @@ jQuery(document).ready(function($) {
         linkText: 'Еще',
         showOnHover: true,
         popupClass: 'sub-menu',
-        linkTitle: 'Показать еще'
+        linkTitle: 'Показать еще',
+        shouldApply: function(){
+            $mainMenu.parents('.main-menu').addClass('main-menu--loaded');
+            return true;
+        }
     });
 
     // Functions show/hide mobile nav
@@ -67,6 +71,7 @@ jQuery(document).ready(function($) {
             $mainMenu.flexMenu({
                 undo: true
             });
+            $('.main-menu').removeClass('main-menu--loaded');
         },
         deferSetup: false,
         setup: function() {
@@ -86,7 +91,11 @@ jQuery(document).ready(function($) {
                 linkText: 'Еще',
                 showOnHover: true,
                 popupClass: 'sub-menu',
-                linkTitle: 'Показать еще'
+                linkTitle: 'Показать еще',
+                shouldApply: function(){
+                    $mainMenu.parents('.main-menu').addClass('main-menu--loaded');
+                    return true;
+                }
             });
 
             // Remove Nav mobile

@@ -31,7 +31,7 @@ $.gulp.task('build', $.gulp.series(
 $.gulp.task('default', $.gulp.series(
     'build',
     $.gulp.parallel(
-    //'critical:build',
+    'critical:build',
     'watch',
     'bsync',
     'favicons:build'

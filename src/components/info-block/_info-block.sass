@@ -6,8 +6,6 @@
     font-size: 13px
 
     .post__header &
-        margin-right: -52px
-
         @include media-breakpoint-up(sm)
             margin-right: -60px
 
@@ -41,6 +39,11 @@
 
         span
             display: block
+
+    // Cats links
+    &__cat-links
+        a
+            color: $green
 
     &.info-block--sm
         font-size: 11px
