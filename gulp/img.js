@@ -4,7 +4,7 @@ module.exports = function () {
         return $.gulp.src([path.path.src.img, path.path.src.imgComp])
             .pipe($.plugins.changed(path.path.build.img))
             .pipe($.plugins.plumber())
-            //.pipe($.plugins.tinypng('ключ API'))
+            .pipe($.plugins.tinypng('J7PHQA2MyeIgr8WkaJHWH0J89I3XssPD'))
             .pipe($.gulp.dest(path.path.build.img));
         done();
     });

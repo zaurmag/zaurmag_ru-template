@@ -1,5 +1,9 @@
-@include media-breakpoint-up(lg)
-    .content
+.content
+    @include media-breakpoint-down(md)
+        &__left
+            padding-top: 20px
+
+    @include media-breakpoint-up(lg)
         &__right
             position: relative
             left: 25%

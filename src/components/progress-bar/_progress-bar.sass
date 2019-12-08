@@ -1,9 +1,15 @@
 .progress-bar
     box-shadow: 0 0 15px 0 rgba(0, 1, 0, 0.2)
     background: rgba($black, 0.5)
-    height: 4px
+    height: 3px
     width: 100%
+    opacity: 0.9
     z-index: 111
+
+    @include media-breakpoint-down(md)
+        position: fixed
+        left: 0
+        right: 0
 
     &__indikator
         height: 100%
