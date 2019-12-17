@@ -1,88 +1,99 @@
 extends ./base/page
 
 block variables
-    - var title = 'Отложенная загрузка видео Ютуб на сайте'
-    - var pageClass = 'single-page'
+	- var title = 'Отложенная загрузка видео Ютуб на сайте'
+	- var pageClass = 'single-page'
 
 block columns
-    main.content__right.col-lg-8
-        article.single-page.post
-            .post__image.single-post__image
-                picture
-                    //source(media="(min-width: 1200px)" srcset="../images/posts/lazy-load-youtube-video.jpg")
-                    source(srcset="../images/posts/lazy-load-youtube-video.jpg")
-                    img.img-fluid(src="data:image/gif;base64,R0lGODlhAQABAAAAADs=", alt= title, width="750")
+	main.content__left.col-lg-8
+		article.single-page.post
+			.post__image.single-post__image
+				picture
+					//source(media="(min-width: 1200px)" srcset="../images/posts/lazy-load-youtube-video.jpg")
+					source(srcset="../images/posts/lazy-load-youtube-video.jpg")
+					img.img-fluid(src="data:image/gif;base64,R0lGODlhAQABAAAAADs=", alt= title, width="750")
 
-            header.post__header
-                h1.single-post__title Отложенная загрузка видео Ютуб на сайте
+			header.post__header
+				h1.single-post__title Отложенная загрузка видео Ютуб на сайте
 
-                .post__format
-                    +icon('document')
+				.post__format
+					+icon('document')
 
-                .info-block
-                    +infoBlock('Заур Магомедов', 'Окт 26, 2019', '37', 'JavaScript', 0)
-            // Text
-            .textblock
-                p Доброго времени суток уважаемые посетители! Небольшое вступление про то, что давно не писал на блоге. Причина — строительство своего дома. Стройка отняла у меня очень много времени, начиная с теории, заканчивая практикой. Ведь кроме фундамента, стен и кровли все остальное делал сам своими руками. Так как я не профессионал в этом деле, много времени убил на получение теоретических знаний, просматривая ролики в Ютуб. Сейчас не буду все расписывать, это отдельная тема для разговора. Возможно создам отдельный проект на эту тему, так как многое фиксировал на видеокамеру. Ну а сейчас же затронем тему видео-роликов Ютуб.
+				.info-block
+					+infoBlock('Заур Магомедов', 'Окт 26, 2019', '37', 'JavaScript', 0)
+			// Text
+			.textblock
+				p Доброго времени суток уважаемые посетители! Небольшое вступление про то, что давно не писал на блоге. Причина — строительство своего дома. Стройка отняла у меня очень много времени, начиная с теории, заканчивая практикой. Ведь кроме фундамента, стен и кровли все остальное делал сам своими руками. Так как я не профессионал в этом деле, много времени убил на получение теоретических знаний, просматривая ролики в Ютуб. Сейчас не буду все расписывать, это отдельная тема для разговора. Возможно создам отдельный проект на эту тему, так как многое фиксировал на видеокамеру. Ну а сейчас же затронем тему видео-роликов Ютуб.
 
-                p Речь пойдет о том, как вставить видео Ютуб на сайте так, чтобы при загрузке страницы не грузились ресурсы видео, тормозя загрузку самой страницы нашего сайта. Какие это ресурсы? Например, стили, скрипты, шрифты, картинки ютуб плеера. На их загрузку тратится время. В результате тесты на сервисе PageSpeed от Гугл дают не очень хорошие результаты.
+					p Речь пойдет о том, как вставить видео Ютуб на сайте так, чтобы при загрузке страницы не грузились ресурсы видео, тормозя загрузку самой страницы нашего сайта. Какие это ресурсы? Например, стили, скрипты, шрифты, картинки ютуб плеера. На их загрузку тратится время. В результате тесты на сервисе PageSpeed от Гугл дают не очень хорошие результаты.
 
-                p Хотелось бы, чтобы было так — страница с видео роликом Ютуб загрузилась, а само видео с плеером нет. Из ресурсов мы подгружаем только картинку-заставку видео. Кликнув по картинке происходит загрузка и показ видео. При таком раскладе необходимы ресурсы грузятся только тогда, когда мы кликнули по заставке. Можно конечно закрыть на это глаза, если на странице всего одно видео. А если их несколько — 2, 3, 4 …?
+					p Хотелось бы, чтобы было так — страница с видео роликом Ютуб загрузилась, а само видео с плеером нет. Из ресурсов мы подгружаем только картинку-заставку видео. Кликнув по картинке происходит загрузка и показ видео. При таком раскладе необходимы ресурсы грузятся только тогда, когда мы кликнули по заставке. Можно конечно закрыть на это глаза, если на странице всего одно видео. А если их несколько — 2, 3, 4 …?
 
-                p Вышеописанные хотелки можно реализовать и воплотить в жизнь с помощью небольшого плагина под названием LazyYT.
+					p Вышеописанные хотелки можно реализовать и воплотить в жизнь с помощью небольшого плагина под названием LazyYT.
 
-                p Давайте сначала посмотрим, как это работает.
+					p Давайте сначала посмотрим, как это работает.
+
+			.row.align-items-center.mb-4
+				.col-md-5.mb-3.mb-md-0
+					// Social share
+					.likely
+						.twitter
+						.facebook
+						.vkontakte
+						.telegram
+						.odnoklassniki
+						.whatsapp
+
+				.col-md-7
+					// Tags
+					.tags
+						ul.tags__list
+							li.tags__item.mb-0
+								a.tags__link(href="#") #youtube
+
+							li.tags__item.mb-0
+								a.tags__link(href="#") #javascript
+
+							li.tags__item.mb-0
+								a.tags__link(href="#") #видео
+
+			// Vote block
+			.vote-block
+				include ./components/vote-block/vote-block
+
+			// Author block
+			.author-block.my-6
+				include ./components/author-block/author-block
+
+			// Related items
+			.single-page__related
+				.single-page__related-tlt Читайте также:
+				ol.single-page__related-list
+					each name in ['Что делать если фотошоп не видит шрифты?', 'Языковые файлы Joomla. Переопределение языковых констант в Joomla 2.5', 'Отложенная загрузка видео Ютуб на сайте']
+						li.single-page__related-item
+							a.single-page__related-link(href="#")= name
+
+			// Single page nav
+			.single-page__navigation.row.no-gutters
+				.col-md-6.single-page__nav.single-page--prev.mb-2.mb-md-0
+					a.single-page__link(href="#")
+						span.single-page__link-icon
+							+icon('long-arrow-left')
+
+						span.single-page__link-tlt Обзор видеокамеры Panasonic V770 + штатив и петлица
+
+				.col-md-6.single-page__nav.single-page--next
+					a.single-page__link(href="#")
+						span.single-page__link-tlt Отзыв о книге «Атлант расправил плечи» + 3 небольшие книги для прочтения
+
+						span.single-page__link-icon
+							+icon('long-arrow-right')
 
 
-            // Tags
-            .tags.mb-3
-                ul.tags__list
-                    li.tags__item
-                        a.tags__link(href="#") #youtube
+			// ===== Comments ================
+			.c_comments.mt-6
+				include ./components/c_comments/c_comments
 
-                    li.tags__item
-                        a.tags__link(href="#") #javascript
-
-                    li.tags__item
-                        a.tags__link(href="#") #видео
-
-            // Vote block
-            .vote-block
-                include ./components/vote-block/vote-block
-
-            // Author block
-            .author-block.my-6
-                include ./components/author-block/author-block
-
-            // Related items
-            .single-page__related
-                .single-page__related-tlt Читайте также:
-                ol.single-page__related-list
-                    each name in ['Что делать если фотошоп не видит шрифты?', 'Языковые файлы Joomla. Переопределение языковых констант в Joomla 2.5', 'Отложенная загрузка видео Ютуб на сайте']
-                        li.single-page__related-item
-                            a.single-page__related-link(href="#")= name
-
-            // Single page nav
-            .single-page__navigation.row.no-gutters
-                .col-md-6.single-page__nav.single-page--prev.mb-2.mb-md-0
-                    a.single-page__link(href="#")
-                        span.single-page__link-icon
-                            +icon('long-arrow-left')
-
-                        span.single-page__link-tlt Обзор видеокамеры Panasonic V770 + штатив и петлица
-
-                .col-md-6.single-page__nav.single-page--next
-                    a.single-page__link(href="#")
-                        span.single-page__link-tlt Отзыв о книге «Атлант расправил плечи» + 3 небольшие книги для прочтения
-
-                        span.single-page__link-icon
-                            +icon('long-arrow-right')
-
-
-            // ===== Comments ================
-            .c_comments.mt-6
-                include ./components/c_comments/c_comments
-
-    //- Include sidebar
-    include ./components/sidebar/sidebar
+	//- Include sidebar
+	include ./components/sidebar/sidebar
 

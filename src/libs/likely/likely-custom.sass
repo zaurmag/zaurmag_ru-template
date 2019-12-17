@@ -1,0 +1,94 @@
+.likely
+    align-items: center
+    display: flex
+    opacity: 0
+
+    &_visible
+        opacity: 1
+        transition: opacity 0.1s ease-in
+
+    &__widget
+        align-items: center
+        border: 1px solid #c9c9c9
+        cursor: pointer
+        display: flex
+        white-space: nowrap
+        justify-content: center
+        height: 32px
+        min-width: 32px
+        transition: border-color 0.2s ease
+        padding: 4px
+
+        &:not(:last-child)
+            margin-right: 5px
+
+        svg
+            font-size: 15px
+
+        // Twitter
+        &_twitter
+            border-color: #00b7ec
+
+            svg
+                fill: #00b7ec
+
+        // Facebook
+        &_facebook
+            border-color: #425497
+
+            svg
+                fill: #425497
+
+        // Vkontakte
+        &_vkontakte
+            border-color: #526e8f
+
+            svg
+                fill: #526e8f
+
+        // Telegram
+        &_telegram
+            border-color: #34abde
+
+            svg
+                fill: #34abde
+
+        // WhatsApp
+        &_whatsapp
+            border-color: #25d366
+
+            svg
+                fill: #25d366
+
+        // Odnoklassniki
+        &_odnoklassniki
+            border-color: #f6903b
+
+            svg
+                fill: #f6903b
+
+        &:hover
+            border-color: $gray-800
+            transition: border-color 0.2s ease
+
+            svg
+                fill: #818181
+                transition: fill 0.2s ease
+
+    &__counter
+        color: $black
+        display: block
+        font-size: 10px
+        line-height: 1
+        margin-left: 6px
+
+        &_empty
+            display: none
+
+    svg
+        display: inline-block
+        width: 1em
+        height: 1em
+        transition: fill 0.2s ease
+
+
