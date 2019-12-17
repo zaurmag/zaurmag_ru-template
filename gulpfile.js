@@ -22,6 +22,7 @@ $.gulp.task('build', $.gulp.series(
     $.gulp.parallel(
         'pug:build',
         'style:build',
+        'styleLocal',
         'js:build',
         'img:build',
         'spriteImg:build'

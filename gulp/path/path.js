@@ -3,7 +3,7 @@ module.exports = {
     path: {
         build: { // Build files
             html: 'dist/',
-            //style: 'dist/css',
+            styleLocal: 'dist/css',
             //img: 'dist/images',
             //imgFavicons: 'dist/images/favicons',
             //js: 'dist/js',
