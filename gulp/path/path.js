@@ -1,4 +1,4 @@
-var cmsPath = 'W:/domains/zaurmag/wp-content/themes/zaurmag/';
+var cmsPath = 'E:/OSPanel/domains/zaurmag/wp-content/themes/zaurmag/';
 module.exports = {
     path: {
         build: { // Build files
@@ -28,6 +28,7 @@ module.exports = {
             favicon: 'src/images/favicon.png'
         },
         watch: { // Watch files
+            json: 'src/base/data/*.json',
             pug: 'src/**/*.pug',
             style: 'src/**/*'
         },

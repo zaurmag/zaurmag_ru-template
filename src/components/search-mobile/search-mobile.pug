@@ -1,0 +1,9 @@
+form.search-mobile__form(action="#", method="post")
+    .search-mobile__dropdown.dropdown-menu.container
+        span.search-mobile__back
+            +icon('long-arrow-left')
+
+        input.search-mobile__input(type="text", name="search", placeholder="Поиск по сайту...")
+
+        button.btn.search-mobile__btn(type="submit")
+            +icon('search-alt-2')

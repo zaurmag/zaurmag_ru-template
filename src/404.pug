@@ -1,0 +1,26 @@
+extends ./base/page
+
+block variables
+    - var title = 'Контакты'
+    - var pageClass = 'single-page'
+
+block columns
+    main.content__no-cols.col-12
+        .error-page
+            header.error-page__header
+                h1.error-page__title 404
+                h2.error-page__subtitle Страница не найдена
+
+            .error-page__homepage-btn
+                a.btn.btn-light(href="/")
+                    +icon('home')
+
+            .row.justify-content-center
+                .col-md-6
+                    .form.error-page__form
+                        form.w_search__form.needs-validation(novalidate)
+                            .form__group
+                                input.form__control.form__control--lg(type="text", placeholder="Введите запрос, мы попробуем что-нибудь найти...")
+
+                                button.btn(type="submit")
+                                    +icon('search')

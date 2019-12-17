@@ -1,0 +1,13 @@
+.row.align-items-center
+    .col-sm-5.mb-2.mb-sm-0
+        .vote-block__title
+            +icon('like')
+            | Оцените пост
+    .col-sm-7
+        .vote-block__raiting
+            .vote-block__raiting-tlt Оценок пока нет
+            .vote-block__stars
+                - for(var i = 0; i < 4; i += 1)
+                    +icon('star-solid')
+                +icon('star-empty')
+

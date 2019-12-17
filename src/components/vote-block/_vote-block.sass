@@ -1,0 +1,46 @@
+.vote-block
+    border: 1px solid $gray-300
+    background-color: $gray-100
+    padding: 15px 20px
+
+    &__title
+        align-items: center
+        color: $gray-800
+        display: flex
+        font-size: 14px
+        font-weight: 700
+
+        .icon
+            margin-right: 5px
+
+    // Rating
+    &__raiting
+        align-items: center
+        display: flex
+        position: relative
+
+        @include media-breakpoint-up(sm)
+            justify-content: flex-end
+
+        &-tlt
+            color: $gray-600
+            font-size: 13px
+            line-height: 1.2
+            margin-right: 10px
+
+    &__stars
+        align-items: center
+        color: $yellow
+        display: flex
+        font-size: 13px
+
+        .icon
+            &:not(:last-child)
+                margin-right: 3px
+
+    .post-ratings-text
+        color: $gray-500
+        font-size: 11px
+        position: absolute
+        bottom: -16px
+        right: 0

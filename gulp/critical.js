@@ -7,6 +7,7 @@ module.exports = function (done) {
             .pipe($.plugins.critical.stream({
                 base: 'dist/',
                 inline: true,
+                ignore: ['@font-face','backdrop-filter','-webkit-backdrop-filter',/url\(/],
                 css: [path.path.build.style + '/styles.min.css'],
                 dimensions: [{
                     height: 667,
