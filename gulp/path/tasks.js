@@ -11,5 +11,6 @@ module.exports = [
     './gulp/bsync',
     './gulp/critical',
     './gulp/favicons',
-    './gulp/zip'
+    './gulp/zip',
+    './gulp/ftp'
 ];

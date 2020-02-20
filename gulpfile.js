@@ -6,6 +6,7 @@ global.$ = {
     },
     gulp: require('gulp'),
     del: require('del'),
+    vinylFtp: require('vinyl-ftp'),
     browserSync: require('browser-sync').create(),
     plugins: require('gulp-load-plugins')({
         overridePattern: true,
@@ -22,7 +23,6 @@ $.gulp.task('build', $.gulp.series(
     $.gulp.parallel(
         'pug:build',
         'style:build',
-        'styleLocal',
         'js:build',
         'img:build',
         'spriteImg:build'
@@ -31,6 +31,7 @@ $.gulp.task('build', $.gulp.series(
 );
 $.gulp.task('default', $.gulp.series(
     'build',
+    'ftp:build',
     $.gulp.parallel(
     'critical:build',
     'watch',

@@ -3,18 +3,12 @@ module.exports = {
     path: {
         build: { // Build files
             html: 'dist/',
-            styleLocal: 'dist/css',
-            //img: 'dist/images',
-            //imgFavicons: 'dist/images/favicons',
-            //js: 'dist/js',
-            //fonts: 'dist/fonts',
-            zip: 'zip',
-            //Replace in cms template
-            style: cmsPath + '/css',
-            img: cmsPath + '/images',
-            imgFavicons: cmsPath + '/images/favicons',
-            js: cmsPath + '/js',
-            fonts: cmsPath + '/fonts'
+            style: 'dist/css',
+            img: 'dist/images',
+            imgFavicons: 'dist/images/favicons',
+            js: 'dist/js',
+            fonts: 'dist/fonts',
+            zip: 'zip'
         },
         src: { // Source files
             pug: 'src/*.pug',
