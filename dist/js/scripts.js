@@ -147,82 +147,90 @@ jQuery(document).ready(function($) {
 }); // end ready
 
 // ****************** Cookies modal message ******************
-var cookieOptions = { expires: 3, path: '/' };
-if ($.cookie('visit') == undefined) {
-    $('body').append('<div class="cookies-mess"><div class="container"><div class="row align-items-center"><div class="col-lg-9 col-md-8">Для лучшего отображения сайта мы принимаем файлы Cookie. Дальнейший просмотр сайта возможен только при условии соглашения использования файлов Cookie.</div><div class="col-lg-3 col-md-4 mt-3 mt-md-0 text-md-left text-center"><a href="#" class="btn btn-success btn-smm py-0 px-3 btn-set-cookie mr-2">Ok!</a><a class="btn btn-danger btn-smm py-0 px-2" href="https://ru.wikipedia.org/wiki/Cookie" target="_blank" rel="nofollow">Подробнее</a></div></div></div>');
+jQuery(document).ready(function($) {
+    var cookieOptions = { expires: 3, path: '/' };
+    if ($.cookie('visit') == undefined) {
+        $('body').append('<div class="cookies-mess"><div class="container"><div class="row align-items-center"><div class="col-lg-9 col-md-8">Для лучшего отображения сайта мы принимаем файлы Cookie. Дальнейший просмотр сайта возможен только при условии соглашения использования файлов Cookie.</div><div class="col-lg-3 col-md-4 mt-3 mt-md-0 text-md-left text-center"><a href="#" class="btn btn-success btn-smm py-0 px-3 btn-set-cookie mr-2">Ok!</a><a class="btn btn-danger btn-smm py-0 px-2" href="https://ru.wikipedia.org/wiki/Cookie" target="_blank" rel="nofollow">Подробнее</a></div></div></div>');
 
-    $(window).on('load', function() {
-        setTimeout(function() {
-            $('.cookies-mess').addClass('show');
-        }, 4000);
-    });
+        $(window).on('load', function() {
+            setTimeout(function() {
+                $('.cookies-mess').addClass('show');
+            }, 4000);
+        });
 
-    $('.btn-set-cookie').on('click', function(){
-        $.cookie('visit', true, cookieOptions);
-        $('.cookies-mess').removeClass('show');
-        setTimeout(function() {
-            $('.cookies-mess').remove();
-        }, 200);
-        return false;
-    });
-};
-
-/**
- * Links Authors Comments
- */
-$('.external-reference').replaceWith(function() {
-    return '<a class="author_comment" onclick="return !window.open(this.href)" href="' + $(this).data('link') + '" title="' + $(this).data('link') + '" rel="nofollow">' + $(this).html() + '</a>';
+        $('.btn-set-cookie').on('click', function(){
+            $.cookie('visit', true, cookieOptions);
+            $('.cookies-mess').removeClass('show');
+            setTimeout(function() {
+                $('.cookies-mess').remove();
+            }, 200);
+            return false;
+        });
+    };
 });
+
+jQuery(document).ready(function($) {
+    /**
+     * Links Authors Comments
+     */
+    $('.external-reference').replaceWith(function() {
+        return '<a class="author_comment" onclick="return !window.open(this.href)" href="' + $(this).data('link') + '" title="' + $(this).data('link') + '" rel="nofollow">' + $(this).html() + '</a>';
+    });
 
 // Add target blank all links in comments text
-$('.c_comments__comment-text').each(function(){
-    $(this).find('a').attr("target", "_blank");
-});
+    $('.c_comments__comment-text').each(function(){
+        $(this).find('a').attr("target", "_blank");
+    });
 
 // Prevent event cancel comment link
-$('#cancel-comment-reply-link').on('click', function(e){
-    e.preventDefault();
+    $('#cancel-comment-reply-link').on('click', function(e){
+        e.preventDefault();
+    });
+
 });
 
-/**
- * Focus and blur on the input field
- */
-var formInput = $('.form__control');
+jQuery(document).ready(function($) {
+    /**
+     * Focus and blur on the input field
+     */
+    var formInput = $('.form__control');
 
-function addClassFn(object) {
-    object.parent().addClass('form__control--focused');
-}
+    function addClassFn(object) {
+        object.parent().addClass('form__control--focused');
+    }
 
-function remClassFn(object) {
-    object.parent().removeClass('form__control--focused');
-}
+    function remClassFn(object) {
+        object.parent().removeClass('form__control--focused');
+    }
 
-formInput
-    .on('focus', function() {
-        addClassFn($(this));
-    })
-    .on('blur', function() {
-        if($(this).val() === '') {
-            remClassFn($(this));
+    formInput
+        .on('focus', function() {
+            addClassFn($(this));
+        })
+        .on('blur', function() {
+            if($(this).val() === '') {
+                remClassFn($(this));
+            }
+        });
+
+    formInput.each(function(){
+        if($(this).val()) {
+            addClassFn($(this));
         }
     });
 
-formInput.each(function(){
-    if($(this).val()) {
-        addClassFn($(this));
-    }
-});
+    /* Init forms
+    ========================================================================= */
 
-/* Init forms
-   ========================================================================= */
-jQuery(document).ready(function($) {
     /**
      * Feedback
      */
     $('#feedbackForm').simpleSendForm({
         mailUrl: "/wp-content/themes/zaurmag/form-submit/submit.php",
         successTitle: "Спасибо за ваше обращение!",
-        successText: "Я обязательно отвечу на ваше письмо в самое ближайшее время."
+        successText: "Я обязательно отвечу на ваше письмо в самое ближайшее время.",
+        captcha: true,
+        captchaPublicKey: '6LfMJSgTAAAAAOTelVg60tsKx5AogFLXH5ElxqnQ'
     });
 
     /**
@@ -231,7 +239,9 @@ jQuery(document).ready(function($) {
     $('#orderVerstka').simpleSendForm({
         mailUrl: "/wp-content/themes/zaurmag/form-submit/submit.php",
         successTitle: "Спасибо за ваше обращение!",
-        successText: "Я обязательно отвечу на вашу заявку не более суток."
+        successText: "Я обязательно отвечу на вашу заявку не более суток.",
+        captcha: true,
+        captchaPublicKey: '6LfMJSgTAAAAAOTelVg60tsKx5AogFLXH5ElxqnQ'
     });
 
     /**
@@ -241,7 +251,8 @@ jQuery(document).ready(function($) {
         mailUrl: "/wp-content/themes/zaurmag/form-submit/submit.php",
         successTitle: "Спасибо за ваше обращение!",
         successText: "Я обязательно отвечу на вашу заявку не более суток.",
-        debug: true
+        captcha: true,
+        captchaPublicKey: '6LfMJSgTAAAAAOTelVg60tsKx5AogFLXH5ElxqnQ'
     });
 }); // end ready
 
@@ -368,10 +379,6 @@ jQuery(document).ready(function($) {
             $('.nav-mobile').remove();
         }
     });
-});
-
-jQuery(document).ready(function($) {
-    $('.lazyYT').lazyYT();
 });
 
 function overlayAddFn() {
