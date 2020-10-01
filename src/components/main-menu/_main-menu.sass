@@ -4,7 +4,7 @@
     overflow: hidden
 
     &--loaded
-        overflow: visible
+        overflow: visible !important
 
     > .container
         position: relative
@@ -104,7 +104,9 @@
                             width: 100%
 
                 // Parent
-                &.parent, &.menu-item-has-children, &.flexMenu-viewMore
+                &.parent,
+                &.menu-item-has-children,
+                &.flexMenu-viewMore
                     a
                         &::before
                             border-top: 5px solid $white
@@ -117,11 +119,13 @@
                             transform: translateY(-50%)
                             right: -13px
 
-                    &:hover, &.active
+                    &:hover,
+                    &.active
                         > a
                             color: $white
 
-                        .main-menu__nav-child, .sub-menu
+                        .main-menu__nav-child,
+                        .sub-menu
                             opacity: 1
                             visibility: visible
                             margin-top: 8px
@@ -129,7 +133,8 @@
 
 
             // Second level
-            &-child, .sub-menu
+            &-child,
+            .sub-menu
                 background-color: #f1f1f1
                 border: 1px solid rgba($black, 0.4)
                 border-top: 4px solid $red

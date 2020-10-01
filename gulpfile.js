@@ -33,9 +33,9 @@ $.gulp.task('default', $.gulp.series(
     'build',
     'ftp:build',
     $.gulp.parallel(
-    'critical:build',
+    //'critical:build',
     'watch',
     'bsync',
-    'favicons:build'
+    //'favicons:build'
 
 )));

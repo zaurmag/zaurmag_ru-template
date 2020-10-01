@@ -2,13 +2,6 @@
     $self: &
 
     /**
-     * Mobile
-     */
-    @include media-breakpoint-down(md)
-        &__list
-
-
-    /**
      * Desktop
      */
     @include media-breakpoint-up(lg)
@@ -19,22 +12,25 @@
             font-weight: 300
             height: 50px
 
-        .menu-item, &__item
+        .menu-item,
+        &__item
             &:not(:last-child)
                 margin-right: 25px
 
                 @include media-breakpoint-up(xl)
                     margin-right: 30px
 
-        .menu-item > a, .menu-item > span, &__link
-            color: #e6e6e6
-            text-decoration: none
-            transition: color .1s ease
-
-            &:hover
-                color: $white
+            > a,
+            > span,
+            &__link
+                color: #e6e6e6
                 text-decoration: none
                 transition: color .1s ease
+
+                &:hover
+                    color: $white
+                    text-decoration: none
+                    transition: color .1s ease
 
         .current-menu-item, &--active
             > span

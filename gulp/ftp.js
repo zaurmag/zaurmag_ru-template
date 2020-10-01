@@ -4,7 +4,7 @@ module.exports = function () {
     $.gulp.task('ftp:build', function(done) {
 
         var conn = $.vinylFtp.create( {
-            host:     '192.168.1.142',
+            host:     '192.168.0.113',
             user:     'zaurmag',
             password: 'zaur4495544',
             parallel: 10,

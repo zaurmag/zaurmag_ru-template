@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
     $('#feedbackForm').simpleSendForm({
         mailUrl: "/wp-content/themes/zaurmag/form-submit/submit.php",
         successTitle: "Спасибо за ваше обращение!",
-        successText: "Я обязательно отвечу на ваше письмо в самое ближайшее время.",
+        successText: "Я обязательно отвечу Вам в самое ближайшее время.",
         captcha: true,
         captchaPublicKey: '6LfMJSgTAAAAAOTelVg60tsKx5AogFLXH5ElxqnQ'
     });
@@ -47,8 +47,8 @@ jQuery(document).ready(function($) {
      */
     $('#orderVerstka').simpleSendForm({
         mailUrl: "/wp-content/themes/zaurmag/form-submit/submit.php",
-        successTitle: "Спасибо за ваше обращение!",
-        successText: "Я обязательно отвечу на вашу заявку не более суток.",
+        successTitle: "Спасибо за вашу заявку!",
+        successText: "Я обязательно отвечу Вам в самое ближайшее время.",
         captcha: true,
         captchaPublicKey: '6LfMJSgTAAAAAOTelVg60tsKx5AogFLXH5ElxqnQ'
     });
@@ -58,8 +58,8 @@ jQuery(document).ready(function($) {
      */
     $('#orderSite').simpleSendForm({
         mailUrl: "/wp-content/themes/zaurmag/form-submit/submit.php",
-        successTitle: "Спасибо за ваше обращение!",
-        successText: "Я обязательно отвечу на вашу заявку не более суток.",
+        successTitle: "Спасибо за вашу заявку!",
+        successText: "Я обязательно отвечу Вам в самое ближайшее время.",
         captcha: true,
         captchaPublicKey: '6LfMJSgTAAAAAOTelVg60tsKx5AogFLXH5ElxqnQ'
     });

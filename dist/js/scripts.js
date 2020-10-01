@@ -121,18 +121,20 @@ jQuery(document).ready(function($) {
             var items = more.data('items');
             var theme = more.data('theme');
             var fpage = '';
+            var category_portfolio = '';
             var format = '';
             var tax = '';
             var tag = '';
             var search = '';
             if (more.data('fpage')) fpage = '&fpage=' + more.data('fpage');
+            if (more.data('category-portfolio')) category_portfolio = '&category-portfolio=' + more.data('category-portfolio');
             if (more.data('format')) format = '&format=' + more.data('format');
             if (more.data('category')) tax = '&cat=' + more.data('category');
             if (more.data('tag')) tag = '&tag=' + more.data('tag');
             if (more.data('search')) search = '&search=' + more.data('search');
             console.log(search);
             $.ajax({
-                url: '/wp-content/themes/' + theme + '/ajax-posts.php?offset=' + offset + '&items=' + items + fpage + format + tax + tag + search
+                url: '/wp-content/themes/' + theme + '/ajax-posts.php?offset=' + offset + '&items=' + items + fpage + format + tax + tag + search + category_portfolio
             }).done(function(html) {
                 container.after(html);
                 more.data('offset', offset + items).removeClass('loading').html(defaultText);
@@ -228,7 +230,7 @@ jQuery(document).ready(function($) {
     $('#feedbackForm').simpleSendForm({
         mailUrl: "/wp-content/themes/zaurmag/form-submit/submit.php",
         successTitle: "Спасибо за ваше обращение!",
-        successText: "Я обязательно отвечу на ваше письмо в самое ближайшее время.",
+        successText: "Я обязательно отвечу Вам в самое ближайшее время.",
         captcha: true,
         captchaPublicKey: '6LfMJSgTAAAAAOTelVg60tsKx5AogFLXH5ElxqnQ'
     });
@@ -238,8 +240,8 @@ jQuery(document).ready(function($) {
      */
     $('#orderVerstka').simpleSendForm({
         mailUrl: "/wp-content/themes/zaurmag/form-submit/submit.php",
-        successTitle: "Спасибо за ваше обращение!",
-        successText: "Я обязательно отвечу на вашу заявку не более суток.",
+        successTitle: "Спасибо за вашу заявку!",
+        successText: "Я обязательно отвечу Вам в самое ближайшее время.",
         captcha: true,
         captchaPublicKey: '6LfMJSgTAAAAAOTelVg60tsKx5AogFLXH5ElxqnQ'
     });
@@ -249,8 +251,8 @@ jQuery(document).ready(function($) {
      */
     $('#orderSite').simpleSendForm({
         mailUrl: "/wp-content/themes/zaurmag/form-submit/submit.php",
-        successTitle: "Спасибо за ваше обращение!",
-        successText: "Я обязательно отвечу на вашу заявку не более суток.",
+        successTitle: "Спасибо за вашу заявку!",
+        successText: "Я обязательно отвечу Вам в самое ближайшее время.",
         captcha: true,
         captchaPublicKey: '6LfMJSgTAAAAAOTelVg60tsKx5AogFLXH5ElxqnQ'
     });

@@ -24,7 +24,7 @@ module.exports = {
         watch: { // Watch files
             json: 'src/base/data/*.json',
             pug: 'src/**/*.pug',
-            style: 'src/**/*'
+            style: 'src/**/*.+(sass|scss|css)'
         },
         clean: {
             all: './dist'
